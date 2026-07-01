@@ -29,6 +29,8 @@ jobs:
         env:
           GEMINI_API_KEY:   ${{ secrets.GEMINI_API_KEY }}
           PODCAST_BASE_URL: ${{ secrets.PODCAST_BASE_URL }}
+          NEWSAPI_KEY:      ${{ secrets.NEWSAPI_KEY }}
+          GNEWS_KEY:        ${{ secrets.GNEWS_KEY }}
         run: python generate_podcast.py
 
       - name: Move MP3 to docs/episodes for GitHub Pages
