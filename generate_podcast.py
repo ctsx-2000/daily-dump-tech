@@ -546,9 +546,10 @@ Every story after the first one must OPEN with a short spoken transition so the
 listener clearly hears a new subject is starting. VARY it — do not reuse the same
 one twice in an episode. Pick ones that fit the story's topic. Examples to draw from
 (and invent similar ones):
-  "Next," / "Moving on," / "Elsewhere," / "Meanwhile," / "Also today,"
+  "Next," / "Moving on," / "Meanwhile," / "Also today,"
   "In AI," / "On the AI side," / "In chips," / "In security," / "In Apple news,"
   "Over at [company]," / "Switching gears," / "Turning to [topic],"
+NEVER use "Elsewhere" as a transition — do not use that word to move between stories.
 The FINAL story must start with "Finally," so the listener knows it's the last one.
 The opener line and the first story do NOT get a transition (the opener leads
 straight into story one).
