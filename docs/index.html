@@ -523,14 +523,23 @@
       return m + ' min';
     }
 
-    // Check an MP3 actually exists (skip deleted episodes)
+    // Check an MP3 actually exists. Uses a tiny ranged GET (more reliable than
+    // HEAD on GitHub Pages). Fails OPEN — if the check itself errors, we keep the
+    // episode rather than hiding a file that's actually there.
     async function mp3Exists(url) {
       if (!url) return false;
       try {
-        const r = await fetch(url, { method: 'HEAD', cache: 'no-store' });
-        return r.ok;
+        const r = await fetch(url, {
+          method: 'GET',
+          headers: { 'Range': 'bytes=0-0' },
+          cache: 'no-store'
+        });
+        // 200 or 206 (partial) both mean the file is there.
+        // 404/403 mean it's gone. Any network error → assume present (fail open).
+        if (r.status === 404 || r.status === 403) return false;
+        return true;
       } catch (e) {
-        return false;
+        return true; // fail open — don't hide episodes on a flaky check
       }
     }
 
@@ -567,13 +576,29 @@
         const title     = item.querySelector('title')?.textContent || 'Episode';
         const pubDate   = new Date(item.querySelector('pubDate')?.textContent || '');
         const enclosure = item.querySelector('enclosure');
-        const url       = enclosure ? enclosure.getAttribute('url') : '';
-        return { title, pubDate, url };
+        let url         = enclosure ? enclosure.getAttribute('url') : '';
+        // Resilience: also derive a relative path to the same file, so the site
+        // works even if the feed's base URL is slightly off. Episodes are served
+        // from ./episodes/<filename>; the relative path is guaranteed same-origin.
+        let relUrl = '';
+        if (url) {
+          const fname = url.split('/').pop();
+          if (fname) relUrl = './episodes/' + fname;
+        }
+        return { title, pubDate, url, relUrl };
       }).sort((a, b) => b.pubDate - a.pubDate);
 
-      // Keep only episodes whose MP3 actually exists
-      const checks = await Promise.all(episodes.map(ep => mp3Exists(ep.url)));
-      episodes = episodes.filter((ep, i) => checks[i]);
+      // Resolve each episode to a working URL (prefer the relative same-origin path)
+      for (const ep of episodes) {
+        if (ep.relUrl && await mp3Exists(ep.relUrl)) {
+          ep.playUrl = ep.relUrl;
+        } else if (ep.url && await mp3Exists(ep.url)) {
+          ep.playUrl = ep.url;
+        } else {
+          ep.playUrl = '';
+        }
+      }
+      episodes = episodes.filter(ep => ep.playUrl);
 
       if (episodes.length === 0) {
         loadingEl.textContent = 'No playable episodes right now.';
@@ -600,12 +625,12 @@
 
         // Fill in the real duration once metadata loads
         const durEl = row.querySelector('.episode-duration');
-        readDuration(ep.url).then(sec => {
+        readDuration(ep.playUrl).then(sec => {
           durEl.textContent = fmtDuration(sec);
         });
 
         function play() {
-          audioEl.src = ep.url;
+          audioEl.src = ep.playUrl;
           titleEl.textContent = ep.title;
           playerBar.style.display = 'block';
           audioEl.play();
