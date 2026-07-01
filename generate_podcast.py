@@ -459,12 +459,12 @@ FORMAT:
   silence so the listener hears a clear break between subjects. Do NOT put a pause
   after the opener or before the closer — only between the story bodies.
 
-LENGTH: The episode should always run about 5 minutes — roughly 700 words total,
-NO MATTER how many stories you cover. This is important: if you only cover 3 stories,
-give each one MORE depth and context so the episode still fills 5 minutes. If you
-cover 7, keep each tighter. Fewer stories means richer coverage of each, not a
-shorter episode. Distribute words UNEVENLY based on importance, but always land
-around 700 words total.
+LENGTH: The episode should always run about 5 minutes. At the podcast's speaking
+pace that means roughly 790 words total, NO MATTER how many stories you cover.
+This is important: if you only cover 3 stories, give each one MORE depth and context
+so the episode still fills 5 minutes. If you cover 7, keep each tighter. Fewer
+stories means richer coverage of each, not a shorter episode. Distribute words
+UNEVENLY based on importance, but always land around 790 words total.
 
 Begin now:"""
 
@@ -567,16 +567,12 @@ SCRIPT TO EXPAND:
 def clean_for_speech(script: str) -> str:
     """
     Safety net: strip characters and patterns that sound broken when read aloud
-    by TTS, in case any slipped past the prompt. Preserves normal punctuation.
+    by TTS, in case any slipped past the prompt. Preserves normal punctuation and
+    leaves [[PAUSE]] markers intact (text_to_speech splits on them).
     """
     import re
 
     text = script
-
-    # Convert story-break markers into a natural spoken pause FIRST, before we
-    # strip brackets below. Edge TTS pauses on sentence breaks; a short line of
-    # ellipses on its own gives a clear beat of silence between subjects.
-    text = re.sub(r"\[\[\s*PAUSE\s*\]\]", "\n\n … \n\n", text, flags=re.IGNORECASE)
 
     # Remove code spans / backticks entirely (keep inner text but drop the ticks)
     text = text.replace("`", "")
@@ -586,8 +582,10 @@ def clean_for_speech(script: str) -> str:
     text = re.sub(r"\(\d+\)", "", text)
     # Collapse "::" and "->" and "/" path separators to spaces
     text = text.replace("::", " ").replace("->", " ").replace("\\", " ")
-    # Remove standalone code-symbol characters that don't belong in speech
+    # Remove standalone code-symbol characters, but PROTECT the [[PAUSE]] marker.
+    text = text.replace("[[PAUSE]]", "\x00PAUSE\x00")
     text = re.sub(r"[<>|{}\[\]#~^]", "", text)
+    text = text.replace("\x00PAUSE\x00", "[[PAUSE]]")
     # Fix leftover double spaces and space-before-punctuation
     text = re.sub(r"\s+([.,;:!?])", r"\1", text)
     text = re.sub(r"[ \t]{2,}", " ", text)
@@ -596,23 +594,77 @@ def clean_for_speech(script: str) -> str:
 
 
 def text_to_speech(script: str, output_path: str) -> bool:
+    """
+    Synthesize the script to MP3. Renders in SEGMENTS split on [[PAUSE]] markers
+    and concatenates the MP3 bytes (same-format Edge TTS MP3s concatenate cleanly).
+    The closing sign-off line is rendered slightly slower so it doesn't rush.
+    """
     try:
         import edge_tts
         import asyncio
+        import re
 
-        script = clean_for_speech(script)
+        VOICE       = "en-US-AndrewMultilingualNeural"
+        RATE        = "+12%"   # normal pace for the body
+        CLOSER_RATE = "+0%"    # slower pace just for the sign-off line
 
-        # AndrewMultilingual — warm, natural, conversational. Much less robotic
-        # than GuyNeural. Other good options: en-US-BrianMultilingualNeural (relaxed),
-        # en-US-AvaMultilingualNeural (female, natural).
-        VOICE = "en-US-AndrewMultilingualNeural"
-        RATE  = "+12%"   # natural but with a bit of pace
+        cleaned = clean_for_speech(script)
 
-        async def _synth():
-            communicate = edge_tts.Communicate(script, VOICE, rate=RATE)
-            await communicate.save(output_path)
+        # Split into segments on pause markers (each ≈ one story = short stream)
+        raw_segments = re.split(r"\[\[\s*PAUSE\s*\]\]", cleaned, flags=re.IGNORECASE)
+        segments = [s.strip() for s in raw_segments if s.strip()]
+        if not segments:
+            segments = [cleaned]
 
-        asyncio.run(_synth())
+        # Pull the closing sign-off out of the last segment so we can slow it down.
+        # Matches "And that's your Daily Dump." (with or without punctuation/case).
+        closer = None
+        closer_pat = re.compile(r"(and that'?s your daily dump[.!]?)\s*$", re.IGNORECASE)
+        if segments:
+            m = closer_pat.search(segments[-1])
+            if m:
+                closer = m.group(1).strip()
+                segments[-1] = segments[-1][:m.start()].strip()
+                if not segments[-1]:
+                    segments.pop()
+
+        async def _synth_segment(text: str, rate: str) -> bytes:
+            buf = bytearray()
+            communicate = edge_tts.Communicate(text, VOICE, rate=rate)
+            async for chunk in communicate.stream():
+                if chunk["type"] == "audio":
+                    buf.extend(chunk["data"])
+            return bytes(buf)
+
+        async def _render(text: str, rate: str, label: str) -> bytes:
+            if not text.rstrip().endswith((".", "!", "?")):
+                text = text.rstrip() + "."
+            audio = b""
+            for attempt in range(3):
+                audio = await _synth_segment(text, rate)
+                if len(audio) > 500:
+                    break
+                print(f"    {label} retry {attempt+1}...")
+            return audio
+
+        async def _run() -> bytes:
+            out = bytearray()
+            for i, seg in enumerate(segments):
+                out.extend(await _render(seg, RATE, f"segment {i+1}"))
+            if closer:
+                # Small pause before the closer, then the slower sign-off.
+                out.extend(await _render(closer, CLOSER_RATE, "closer"))
+            return bytes(out)
+
+        audio_bytes = asyncio.run(_run())
+        if len(audio_bytes) < 1000:
+            print("  TTS produced almost no audio — treating as failure")
+            return False
+
+        with open(output_path, "wb") as f:
+            f.write(audio_bytes)
+        n = len(segments) + (1 if closer else 0)
+        print(f"    (rendered {n} segments{' + slow closer' if closer else ''})")
         return True
     except Exception as e:
         print(f"  TTS error: {e}")
@@ -743,12 +795,12 @@ def main():
         print(f"    - {t[:70]}")
     print(f"  Script: {word_count} words (~{word_count // 130} min)")
 
-    # Always aim for ~5 minutes (~700 words). Expand if short regardless of story count.
-    if word_count < 620:
+    # Always aim for ~5 minutes. At +12% speed that's ~790 words. Expand if short.
+    if word_count < 740:
         print(f"  Under 5-min target — asking Gemini to expand...")
-        script = expand_script(script, target_low=700)
+        script = expand_script(script, target_low=790)
         word_count = _wc(script)
-        print(f"  After expansion: {word_count} words (~{word_count // 130} min)")
+        print(f"  After expansion: {word_count} words (~{word_count // 165} min)")
 
     # Absolute stub guard: below this, something is genuinely broken.
     if word_count < 450:
