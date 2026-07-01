@@ -234,34 +234,34 @@ def write_script_gemini(candidates: list) -> tuple:
 You are writing a script for a daily audio tech news briefing called Daily Dump Tech.
 
 Below are {len(candidates)} candidate tech news stories from today. Pick the {HEADLINES_COUNT}
-MOST important and interesting ones (prioritize: major AI developments, big tech company
-news, significant product launches, cybersecurity, notable startups/funding, science/space tech).
-Skip anything that reads like an ad, listicle, or evergreen how-to.
+MOST important and substantive ones. Prioritize: major AI developments, big tech company
+news, significant product launches, cybersecurity, notable startups and funding, science
+and space tech, major policy or legal news. Deprioritize: gaming deals, gadget sale
+round-ups, celebrity or entertainment fluff, listicles, and evergreen how-to articles.
 
 CANDIDATE STORIES:
 {candidate_block}
 
-Now write the full podcast script following these rules EXACTLY:
+First output the chosen titles, then the script, in EXACTLY this format:
 
-STYLE RULES:
+TITLES: <chosen title 1> | <chosen title 2> | <chosen title 3> | <chosen title 4> | <chosen title 5>
+
+SCRIPT:
+<the full script here>
+
+SCRIPT RULES:
 - Fast, punchy news anchor energy. No fluff.
 - No filler phrases: no "Let's dive in", "Stay tuned", "Without further ado"
-- Each story: 2-3 tight sentences max
+- Each story: 2-3 tight sentences
 - Write for the ear — short sentences, active voice
 - NO bullet points, NO markdown, NO asterisks, NO headers
 - Do NOT name news sources
 - Do NOT start sentences with "today" or "here's"
-- Target length: 650-750 words (about 5 minutes of audio)
+- Length: 650-750 words (about 5 minutes of audio). This length is required.
+- Structure: one cold-open sentence (mention the date and "five stories in tech"),
+  then the five stories back to back, then one dry punchy sign-off sentence.
 
-STRUCTURE:
-1. One cold-open sentence: mention the date and that it's five stories in tech
-2. The five stories back to back, 2-3 sentences each (no "story one" labels)
-3. One dry, punchy sign-off sentence
-
-After the script, on a brand new line, output exactly:
-TITLES: <chosen title 1> | <chosen title 2> | <chosen title 3> | <chosen title 4> | <chosen title 5>
-
-Write it now:"""
+Begin now:"""
 
     url = (
         "https://generativelanguage.googleapis.com/v1beta/models/"
@@ -270,8 +270,9 @@ Write it now:"""
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
-            "temperature":     0.7,
-            "maxOutputTokens": 2000,
+            "temperature":      0.7,
+            "maxOutputTokens":  4000,
+            "thinkingConfig": {"thinkingBudget": 0},
         },
     }
 
@@ -287,9 +288,15 @@ Write it now:"""
     if not full_text:
         raise RuntimeError(f"Gemini returned empty text. Raw: {json.dumps(data)[:500]}")
 
-    # Separate script from the TITLES line
+    # Parse the "TITLES: ... \n SCRIPT: ..." format
     script, titles = full_text, []
-    if "TITLES:" in full_text:
+    if "SCRIPT:" in full_text and "TITLES:" in full_text:
+        titles_part, script_part = full_text.split("SCRIPT:", 1)
+        titles_part = titles_part.replace("TITLES:", "").strip()
+        titles = [t.strip() for t in titles_part.split("|") if t.strip()]
+        script = script_part.strip()
+    elif "TITLES:" in full_text:
+        # Fallback: TITLES present but no SCRIPT label
         head, tail = full_text.rsplit("TITLES:", 1)
         script = head.strip()
         titles = [t.strip() for t in tail.strip().split("|") if t.strip()]
