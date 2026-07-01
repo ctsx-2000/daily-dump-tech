@@ -662,6 +662,21 @@ def update_rss_feed(mp3_filename: str, title: str, description: str, mp3_path: s
     if os.path.exists(feed_path):
         with open(feed_path, "r", encoding="utf-8") as f:
             existing = f.read()
+
+        # De-dupe: if an episode for this same MP3 (same day) already exists,
+        # remove it so we replace rather than stack duplicates. Matches on the
+        # enclosure URL, which contains the dated filename.
+        import re
+        pattern = re.compile(
+            r"\s*<item>(?:(?!</item>).)*?"
+            + re.escape(mp3_filename)
+            + r"(?:(?!</item>).)*?</item>",
+            re.DOTALL,
+        )
+        existing, n_removed = pattern.subn("", existing)
+        if n_removed:
+            print(f"  Replaced {n_removed} existing entry for {mp3_filename}")
+
         updated = existing.replace(
             "  <!-- EPISODES -->", new_item + "\n  <!-- EPISODES -->"
         )
