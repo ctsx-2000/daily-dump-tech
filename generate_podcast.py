@@ -1,30 +1,19 @@
 """
 Daily Dump — Tech Edition
-Pulls top tech news, skips recently covered stories (unless major update),
-writes a 5-minute script with Gemini (free), converts to MP3 via Edge TTS,
-then updates the GitHub Pages RSS feed.
+Uses Gemini's built-in Google Search grounding to find today's top tech news,
+skips recently covered stories (unless major update), writes a punchy 5-minute
+script, converts to MP3 via Edge TTS, updates the GitHub Pages RSS feed.
 """
 
 import os
 import json
 import hashlib
 import datetime
-import feedparser
 import requests
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-TECH_FEEDS = [
-    "https://feeds.feedburner.com/TechCrunch",
-    "https://www.theverge.com/rss/index.xml",
-    "https://www.wired.com/feed/rss",
-    "https://feeds.arstechnica.com/arstechnica/index",
-    "https://hnrss.org/frontpage",
-    "https://rss.nytimes.com/services/xml/rss/nyt/Technology.xml",
-]
-
-HEADLINES_COUNT  = 5          # stories per episode
-STORY_MEMORY_DAYS = 3         # skip a story if covered within this many days
-                               # (unless it's flagged as a major update)
+HEADLINES_COUNT   = 5
+STORY_MEMORY_DAYS = 3
 OUTPUT_DIR        = "output"
 FEED_DIR          = "docs"
 MEMORY_FILE       = "output/story_memory.json"
@@ -41,16 +30,10 @@ PODCAST_BASE_URL    = os.environ.get(
 # ── STORY MEMORY ─────────────────────────────────────────────────────────────
 
 def story_key(title: str) -> str:
-    """Stable short hash of a normalised title — used as the memory key."""
-    normalised = title.lower().strip()
-    return hashlib.md5(normalised.encode()).hexdigest()[:12]
+    return hashlib.md5(title.lower().strip().encode()).hexdigest()[:12]
 
 
 def load_memory() -> dict:
-    """
-    Load the story memory JSON file.
-    Schema: { "<story_key>": { "title": str, "date": "YYYY-MM-DD" } }
-    """
     if os.path.exists(MEMORY_FILE):
         try:
             with open(MEMORY_FILE, "r") as f:
@@ -61,14 +44,12 @@ def load_memory() -> dict:
 
 
 def save_memory(memory: dict):
-    """Persist the story memory file."""
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     with open(MEMORY_FILE, "w") as f:
         json.dump(memory, f, indent=2)
 
 
 def purge_old_memory(memory: dict, days: int = 14) -> dict:
-    """Remove entries older than `days` to keep the file lean."""
     cutoff = datetime.date.today() - datetime.timedelta(days=days)
     return {
         k: v for k, v in memory.items()
@@ -76,118 +57,73 @@ def purge_old_memory(memory: dict, days: int = 14) -> dict:
     }
 
 
-def was_recently_covered(title: str, memory: dict) -> bool:
-    """Return True if this story key was covered within STORY_MEMORY_DAYS."""
-    key = story_key(title)
-    if key not in memory:
-        return False
-    covered_date = datetime.date.fromisoformat(memory[key]["date"])
-    age = (datetime.date.today() - covered_date).days
-    return age < STORY_MEMORY_DAYS
-
-
-def mark_covered(titles: list[str], memory: dict) -> dict:
-    """Add today's stories to the memory dict."""
+def mark_covered(titles: list, memory: dict) -> dict:
     today = datetime.date.today().isoformat()
     for title in titles:
         memory[story_key(title)] = {"title": title, "date": today}
     return memory
 
+
+def recent_titles(memory: dict) -> list:
+    """Return titles covered within STORY_MEMORY_DAYS for the prompt."""
+    cutoff = datetime.date.today() - datetime.timedelta(days=STORY_MEMORY_DAYS)
+    return [
+        v["title"] for v in memory.values()
+        if datetime.date.fromisoformat(v["date"]) >= cutoff
+    ]
+
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def fetch_headlines(feeds: list, count: int, memory: dict) -> list[dict]:
+def generate_script_with_search(memory: dict) -> tuple[str, list]:
     """
-    Pull headlines from RSS feeds, filter out recently covered stories,
-    but allow them back in if the title contains update-signal words
-    (suggesting a meaningful development on an ongoing story).
+    Ask Gemini to search for today's top tech stories AND write the script
+    in one call, using Google Search grounding for live news.
+    Returns (script_text, list_of_story_titles_used).
     """
-    UPDATE_SIGNALS = {
-        "update", "updated", "new", "latest", "breaks", "breaking",
-        "launches", "announces", "confirms", "reveals", "raises",
-        "acquires", "banned", "fined", "sues", "ruling", "recall",
-        "breach", "hack", "layoffs", "fired", "resigns",
-    }
-
-    entries = []
-    headers = {"User-Agent": "Mozilla/5.0 (compatible; DailyDumpPodcast/1.0)"}
-
-    for url in feeds:
-        try:
-            feed = feedparser.parse(url, request_headers=headers)
-            for entry in feed.entries[:4]:
-                entries.append({
-                    "title":     entry.get("title", "").strip(),
-                    "summary":   entry.get("summary", entry.get("description", "")),
-                    "link":      entry.get("link", ""),
-                    "published": entry.get("published", ""),
-                })
-        except Exception as e:
-            print(f"  Warning: could not fetch {url}: {e}")
-
-    # Deduplicate by title
-    seen_titles, unique = set(), []
-    for e in entries:
-        key = e["title"].lower()[:60]
-        if key not in seen_titles:
-            seen_titles.add(key)
-            unique.append(e)
-
-    # Filter: skip recently covered stories unless they carry update signals
-    filtered = []
-    skipped  = []
-    for e in unique:
-        title_words = set(e["title"].lower().split())
-        has_update_signal = bool(title_words & UPDATE_SIGNALS)
-
-        if was_recently_covered(e["title"], memory) and not has_update_signal:
-            skipped.append(e["title"])
-            continue
-        filtered.append(e)
-
-    if skipped:
-        print(f"  Skipped {len(skipped)} recently covered stories")
-        for t in skipped[:3]:
-            print(f"    - {t[:70]}")
-
-    # If we don't have enough fresh stories, backfill with the least-stale skipped ones
-    if len(filtered) < count:
-        print(f"  Not enough fresh stories — backfilling with {count - len(filtered)} older ones")
-        filtered += [e for e in unique if e not in filtered][: count - len(filtered)]
-
-    return filtered[:count]
-
-
-def write_script_gemini(headlines: list) -> str:
-    """Use Gemini 2.5 Flash (free tier) to write the podcast script."""
     api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
-        raise ValueError("GEMINI_API_KEY environment variable not set")
+        raise ValueError("GEMINI_API_KEY not set")
 
-    today = datetime.date.today().strftime("%B %d, %Y")
+    today     = datetime.date.today().strftime("%B %d, %Y")
+    skip_list = recent_titles(memory)
+    skip_block = ""
+    if skip_list:
+        skip_block = (
+            "\n\nDo NOT cover these stories — they were already covered recently:\n"
+            + "\n".join(f"- {t}" for t in skip_list[:20])
+            + "\nIf a story on this list has had a MAJOR new development today "
+              "(arrest, ruling, product launch, breach, recall), you may include it.\n"
+        )
 
-    stories_block = "\n".join(
-        f"- {h['title']}: {h['summary'][:300]}" for h in headlines
-    )
+    prompt = f"""Today is {today}.
 
-    prompt = f"""You are writing a script for a daily audio tech news briefing called Daily Dump Tech.
-Style: Fast, punchy, news anchor energy. No fluff. No filler phrases like "Let's dive in", "Stay tuned", or "Without further ado."
-Each story gets 2-3 tight sentences max. Write for the ear, not the eye — short sentences, active voice, no jargon.
-Do NOT use bullet points, markdown, asterisks, or headers anywhere in the output. Spoken word only.
-Do NOT name sources. Do NOT start sentences with "today" or "here's".
-Target length: about 5 minutes of spoken audio (roughly 650-750 words total).
+You are writing a script for a daily audio tech news briefing called Daily Dump Tech.
+Use your Google Search tool to find the 5 most important tech news stories from the last 24 hours.
+Focus on: AI, software, hardware, big tech companies, startups, cybersecurity, science/space tech.
+Avoid: opinion pieces, listicles, evergreen how-to articles.
+{skip_block}
+After finding the stories, write the full podcast script following these rules exactly:
 
-Today is {today}.
+SCRIPT RULES:
+- Style: Fast, punchy news anchor energy. No fluff.
+- No filler phrases: no "Let's dive in", "Stay tuned", "Without further ado", "Fascinating"
+- Each story: 2-3 tight sentences max
+- Write for the ear — short sentences, active voice
+- NO bullet points, NO markdown, NO asterisks, NO headers anywhere
+- Do NOT name news sources
+- Do NOT start sentences with "today" or "here's"
+- Target: ~650-750 words (about 5 minutes of audio)
 
-Structure — follow this exactly:
+SCRIPT STRUCTURE:
 1. One cold-open sentence: date + "five stories in tech"
-2. Five stories, each 2-3 sentences. No intros like "story one" or "first up".
-3. One sign-off sentence. Keep it dry and punchy — no "thanks for listening."
+2. Five stories back to back, 2-3 sentences each, no "story one" or "first up" labels
+3. One dry punchy sign-off sentence
 
-TECH STORIES:
-{stories_block}
+After the script, on a new line write:
+TITLES: title1 | title2 | title3 | title4 | title5
 
-Write the full script now:"""
+Write the script now:"""
 
     url = (
         "https://generativelanguage.googleapis.com/v1beta/models/"
@@ -195,15 +131,28 @@ Write the full script now:"""
     )
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
+        "tools": [{"google_search": {}}],
         "generationConfig": {
             "temperature":     0.7,
-            "maxOutputTokens": 1200,
+            "maxOutputTokens": 1500,
         },
     }
-    resp = requests.post(url, json=payload, timeout=30)
+
+    resp = requests.post(url, json=payload, timeout=60)
     resp.raise_for_status()
     data = resp.json()
-    return data["candidates"][0]["content"]["parts"][0]["text"]
+
+    full_text = data["candidates"][0]["content"]["parts"][0]["text"]
+
+    # Split script from titles line
+    script    = full_text
+    titles    = []
+    if "TITLES:" in full_text:
+        parts  = full_text.rsplit("TITLES:", 1)
+        script = parts[0].strip()
+        titles = [t.strip() for t in parts[1].strip().split("|") if t.strip()]
+
+    return script, titles
 
 
 def text_to_speech(script: str, output_path: str) -> bool:
@@ -212,8 +161,8 @@ def text_to_speech(script: str, output_path: str) -> bool:
         import edge_tts
         import asyncio
 
-        VOICE = "en-US-GuyNeural"  # authoritative male news anchor
-        RATE  = "+15%"             # slightly faster for punchy feel
+        VOICE = "en-US-GuyNeural"
+        RATE  = "+15%"
 
         async def _synth():
             communicate = edge_tts.Communicate(script, VOICE, rate=RATE)
@@ -227,16 +176,13 @@ def text_to_speech(script: str, output_path: str) -> bool:
 
 
 def get_mp3_duration_seconds(mp3_path: str) -> int:
-    """Best-effort MP3 duration estimate."""
     try:
-        size = os.path.getsize(mp3_path)
-        return max(1, size // 16000)  # ~128kbps CBR
+        return max(1, os.path.getsize(mp3_path) // 16000)
     except Exception:
-        return 300  # fallback: 5 minutes
+        return 300
 
 
 def update_rss_feed(mp3_filename: str, title: str, description: str, mp3_path: str):
-    """Append a new episode to docs/feed.xml (served via GitHub Pages)."""
     os.makedirs(FEED_DIR, exist_ok=True)
     os.makedirs(os.path.join(FEED_DIR, "episodes"), exist_ok=True)
     feed_path = os.path.join(FEED_DIR, "feed.xml")
@@ -296,28 +242,27 @@ def main():
     mp3_path     = os.path.join(OUTPUT_DIR, mp3_filename)
     script_path  = os.path.join(OUTPUT_DIR, f"daily-dump-tech-{today_str}.txt")
 
-    # ── Load + purge story memory ──
     print(f"[{today_str}] Loading story memory...")
     memory = load_memory()
     memory = purge_old_memory(memory, days=14)
     print(f"  {len(memory)} stories in memory")
+    if memory:
+        skipping = recent_titles(memory)
+        if skipping:
+            print(f"  Will skip {len(skipping)} recently covered stories")
 
-    # ── Fetch fresh headlines ──
-    print(f"[{today_str}] Fetching tech headlines...")
-    headlines = fetch_headlines(TECH_FEEDS, HEADLINES_COUNT, memory)
-    print(f"  Using {len(headlines)} stories")
-
-    # ── Write script ──
-    print(f"[{today_str}] Writing script with Gemini...")
-    script = write_script_gemini(headlines)
+    print(f"[{today_str}] Searching for today's tech news with Gemini...")
+    script, titles = generate_script_with_search(memory)
     word_count = len(script.split())
     print(f"  Script: {word_count} words (~{word_count // 130} min)")
+    print(f"  Stories found: {len(titles)}")
+    for t in titles:
+        print(f"    - {t[:70]}")
 
     with open(script_path, "w") as f:
         f.write(script)
     print(f"  Script saved → {script_path}")
 
-    # ── Convert to audio ──
     print(f"[{today_str}] Converting to audio...")
     success = text_to_speech(script, mp3_path)
 
@@ -325,7 +270,6 @@ def main():
         size_kb = os.path.getsize(mp3_path) // 1024
         print(f"  MP3 saved → {mp3_path} ({size_kb} KB)")
 
-        # ── Update RSS feed ──
         update_rss_feed(
             mp3_filename,
             title       = f"Daily Dump Tech — {today_str}",
@@ -333,10 +277,10 @@ def main():
             mp3_path    = mp3_path,
         )
 
-        # ── Save memory (only after successful episode) ──
-        memory = mark_covered([h["title"] for h in headlines], memory)
-        save_memory(memory)
-        print(f"  Memory updated → {len(memory)} stories tracked")
+        if titles:
+            memory = mark_covered(titles, memory)
+            save_memory(memory)
+            print(f"  Memory updated → {len(memory)} stories tracked")
     else:
         print("  TTS failed — check edge-tts installation")
 
