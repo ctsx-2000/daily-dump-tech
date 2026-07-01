@@ -1,24 +1,42 @@
 """
 Daily Dump — Tech Edition
-Fetches top tech news from NewsAPI + GNews (dual source for reliability),
-skips recently covered stories (unless major update), writes a punchy
-5-minute script with Gemini, converts to MP3 via Edge TTS, updates the
+Fetches top tech news from NewsAPI + GNews + a set of top tech RSS feeds
+(cross-referenced for importance), skips recently covered stories, writes a
+~5-minute script with Gemini, converts to MP3 via Edge TTS, updates the
 GitHub Pages RSS feed.
 """
 
 import os
+import re
 import json
 import hashlib
 import datetime
 import requests
 
 # ── CONFIG ────────────────────────────────────────────────────────────────────
-HEADLINES_COUNT   = 5          # stories used per episode
-CANDIDATE_POOL    = 25         # how many headlines to gather before picking
+MIN_STORIES       = 3          # never fewer than this
+MAX_STORIES       = 7          # never more than this
+CANDIDATE_POOL    = 40         # how many headlines to gather before picking
 STORY_MEMORY_DAYS = 3
 OUTPUT_DIR        = "output"
 FEED_DIR          = "docs"
 MEMORY_FILE       = "output/story_memory.json"
+
+# Top tech publications — the same kind of sources TLDR curates from.
+# These give wide coverage + a cross-source importance signal (a story covered
+# by several outlets is probably a bigger deal).
+RSS_FEEDS = [
+    "https://techcrunch.com/feed/",
+    "https://www.theverge.com/rss/index.xml",
+    "https://feeds.arstechnica.com/arstechnica/index",
+    "https://www.wired.com/feed/rss",
+    "https://hnrss.org/frontpage?points=150",   # Hacker News, 150+ points = high signal
+    "https://www.engadget.com/rss.xml",
+    "https://www.theregister.com/headlines.atom",
+    "https://simonwillison.net/atom/everything/",  # top AI/LLM practitioner blog
+    "https://feeds.feedburner.com/TheHackersNews",  # security
+    "https://www.bleepingcomputer.com/feed/",        # security
+]
 
 PODCAST_TITLE       = "Daily Dump: Tech"
 PODCAST_DESCRIPTION = "Fast daily tech news. No fluff. Five minutes."
@@ -166,25 +184,122 @@ def fetch_gnews() -> list:
         return []
 
 
+def fetch_rss() -> list:
+    """
+    Fetch recent headlines from the RSS_FEEDS list of top tech publications.
+    Only keeps items from roughly the last 2 days. Returns [] on total failure
+    but tolerates individual feeds failing.
+    """
+    try:
+        import feedparser
+    except ImportError:
+        print("  RSS: feedparser not installed, skipping")
+        return []
+
+    headers = {"User-Agent": "Mozilla/5.0 (compatible; DailyDumpPodcast/1.0)"}
+    cutoff  = datetime.datetime.utcnow() - datetime.timedelta(days=2)
+    out     = []
+    ok_feeds = 0
+
+    for url in RSS_FEEDS:
+        try:
+            feed = feedparser.parse(url, request_headers=headers)
+            if not feed.entries:
+                continue
+            ok_feeds += 1
+            source = feed.feed.get("title", url.split("/")[2])
+            for entry in feed.entries[:8]:
+                title = (entry.get("title") or "").strip()
+                if not title:
+                    continue
+                # Recency filter when a date is available
+                published = entry.get("published_parsed") or entry.get("updated_parsed")
+                if published:
+                    try:
+                        pub_dt = datetime.datetime(*published[:6])
+                        if pub_dt < cutoff:
+                            continue
+                    except Exception:
+                        pass
+                summary = entry.get("summary", entry.get("description", "")) or ""
+                # Strip HTML tags from RSS summaries
+                summary = re.sub(r"<[^>]+>", "", summary)[:300]
+                out.append({
+                    "title":   title,
+                    "summary": summary,
+                    "source":  source,
+                })
+        except Exception as e:
+            print(f"  RSS feed failed ({url}): {e}")
+            continue
+
+    print(f"  RSS: {len(out)} stories from {ok_feeds}/{len(RSS_FEEDS)} feeds")
+    return out
+
+
+def _norm_title(title: str) -> str:
+    """Normalise a title for cross-source matching."""
+    t = title.lower()
+    t = re.sub(r"[^a-z0-9 ]", "", t)
+    t = re.sub(r"\s+", " ", t).strip()
+    return t
+
+
 def gather_candidates(memory: dict) -> list:
     """
-    Combine both sources, dedupe, and filter out recently-covered stories
-    (unless they carry an update signal). Returns the candidate pool.
+    Combine NewsAPI + GNews + RSS feeds, dedupe, count how many sources cover
+    each story (importance signal), filter recently-covered, and return the
+    candidate pool sorted by cross-source coverage.
     """
-    combined = fetch_newsapi() + fetch_gnews()
+    combined = fetch_newsapi() + fetch_gnews() + fetch_rss()
 
     if not combined:
         raise RuntimeError(
-            "Both news sources returned nothing. Check NEWSAPI_KEY and GNEWS_KEY."
+            "All news sources returned nothing. Check NEWSAPI_KEY, GNEWS_KEY, "
+            "and network access to the RSS feeds."
         )
 
-    # Dedupe by normalised title prefix
-    seen, unique = set(), []
+    # Group near-duplicate stories across sources using word-overlap similarity.
+    # Track "source_count" = how many outlets carried each story.
+    STOPWORDS = {
+        "the", "a", "an", "to", "of", "in", "on", "for", "with", "and", "or",
+        "at", "by", "is", "are", "as", "new", "now", "its", "it", "this", "that",
+        "from", "has", "have", "will", "after", "over", "into", "up", "out",
+    }
+
+    def sig_words(title):
+        return {
+            w for w in _norm_title(title).split()
+            if w not in STOPWORDS and len(w) > 2
+        }
+
+    groups = []  # list of {title, summary, source_count, _words}
     for a in combined:
-        k = a["title"].lower()[:55]
-        if k not in seen:
-            seen.add(k)
-            unique.append(a)
+        words = sig_words(a["title"])
+        if not words:
+            continue
+        matched = None
+        for grp in groups:
+            overlap = words & grp["_words"]
+            # Same story if they share enough significant words
+            smaller = min(len(words), len(grp["_words"]))
+            if smaller and len(overlap) / smaller >= 0.6:
+                matched = grp
+                break
+        if matched:
+            matched["source_count"] += 1
+            if len(a.get("summary", "")) > len(matched.get("summary", "")):
+                matched["summary"] = a["summary"]
+                matched["title"]   = a["title"]  # keep the fuller headline too
+        else:
+            groups.append({
+                "title":        a["title"],
+                "summary":      a.get("summary", ""),
+                "source_count": 1,
+                "_words":       words,
+            })
+
+    unique = [{k: v for k, v in g.items() if k != "_words"} for g in groups]
 
     # Filter recently-covered unless update signal present
     fresh, skipped = [], []
@@ -199,14 +314,24 @@ def gather_candidates(memory: dict) -> list:
     if skipped:
         print(f"  Skipped {len(skipped)} recently covered stories")
 
+    # Sort by how many sources covered it (importance signal), highest first
+    fresh.sort(key=lambda x: x["source_count"], reverse=True)
+
+    # Report the strongest cross-source stories
+    multi = [f for f in fresh if f["source_count"] > 1]
+    if multi:
+        print(f"  {len(multi)} stories covered by multiple sources (higher importance):")
+        for f in multi[:5]:
+            print(f"    [{f['source_count']}x] {f['title'][:60]}")
+
     # Backfill if too few fresh stories
-    if len(fresh) < HEADLINES_COUNT:
-        need = HEADLINES_COUNT - len(fresh)
+    if len(fresh) < MIN_STORIES:
+        need = MIN_STORIES - len(fresh)
         print(f"  Only {len(fresh)} fresh — backfilling {need} older ones")
         for a in unique:
             if a not in fresh:
                 fresh.append(a)
-                if len(fresh) >= HEADLINES_COUNT:
+                if len(fresh) >= MIN_STORIES:
                     break
 
     return fresh[:CANDIDATE_POOL]
@@ -214,10 +339,10 @@ def gather_candidates(memory: dict) -> list:
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def write_script_gemini(candidates: list) -> tuple:
+def write_script_gemini(candidates: list, max_stories: int) -> tuple:
     """
-    Gemini picks the best HEADLINES_COUNT stories from the candidate pool
-    and writes the script. Returns (script, chosen_titles).
+    Gemini judges how many stories are worth covering (between MIN_STORIES and
+    max_stories) and writes the script. Returns (script, chosen_titles).
     """
     api_key = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
@@ -226,69 +351,99 @@ def write_script_gemini(candidates: list) -> tuple:
     today = datetime.date.today().strftime("%B %d, %Y")
 
     candidate_block = "\n".join(
-        f"{i+1}. {c['title']}: {c['summary']}" for i, c in enumerate(candidates)
+        f"{i+1}. [{c.get('source_count', 1)} source(s)] {c['title']}: {c['summary']}"
+        for i, c in enumerate(candidates)
     )
 
     prompt = f"""Today is {today}.
 
 You are writing the script for a daily tech news podcast called Daily Dump: Tech.
-It is modeled directly on the TLDR tech newsletter: written BY an engineer FOR
-engineers. Dense, factual, zero hype, zero hand-holding. The listener is a
-software engineer, security researcher, or founder who already knows the field.
-Respect their intelligence. Give them the facts and trust them to get it.
+It's modeled on the TLDR tech newsletter: written BY an engineer FOR engineers.
+Smart, factual, conversational, zero hype. The listener is a developer or founder
+who knows the field. This is a PODCAST people listen to on a commute — not release
+notes, not documentation.
 
-Below are {len(candidates)} candidate stories. Pick the {HEADLINES_COUNT} MOST
-substantive for a technical audience. Strongly prioritize:
-- AI/ML model releases, benchmarks, research papers, capabilities
-- Chips, semiconductors, hardware, data centers, infrastructure
-- Developer tools, frameworks, languages, open source, APIs
-- Security: specific vulnerabilities, CVEs, breaches, exploits, patches
-- Funding rounds, acquisitions, IPOs with real dollar figures
-Strongly AVOID: consumer gadget reviews, hands-on impressions, gaming deals,
-entertainment, anything sourced from user reviews or opinions, listicles, rumors.
+Below are {len(candidates)} candidate stories.
+
+FIRST, DECIDE HOW MANY STORIES TO COVER:
+Judge how much genuinely worthwhile tech news there is today. Cover between
+{MIN_STORIES} and {max_stories} stories — YOUR CHOICE based on the actual news.
+- Each story is tagged with how many sources covered it. A story covered by
+  MULTIPLE sources is usually more important — weight those higher when choosing
+  what to cover and how much time to give it. A single-source story can still be
+  worth covering if it's substantial (a notable release, a real breach, big funding).
+- If it's a big news day with lots of substantial stories, cover more (up to {max_stories}).
+- If it's a slow day and only a few stories really matter, cover fewer (as few as {MIN_STORIES}).
+- Do NOT pad the episode with weak stories just to hit a number. Quality over quantity.
+- Only count AI/ML, chips/hardware, dev tools/open source, security, and funding/M&A
+  as strong. Consumer gadget reviews, gaming deals, entertainment, and rumors are NOT
+  worth covering — exclude them entirely even if it means a shorter episode.
 
 CANDIDATE STORIES:
 {candidate_block}
 
-Output in EXACTLY this format:
+Output in EXACTLY this format (list ONLY the titles you actually chose to cover,
+separated by the pipe character — between {MIN_STORIES} and {max_stories} of them):
 
-TITLES: <title 1> | <title 2> | <title 3> | <title 4> | <title 5>
+TITLES: <title 1> | <title 2> | <title 3> | ...
 
 SCRIPT:
 <the full script>
 
-HOW TO WRITE IT — study these rules, this is the whole point:
+=== HOW TO WRITE IT (this is the important part) ===
 
-TLDR VOICE:
-- Write like a smart engineer telling a colleague what happened. Not a news anchor,
-  not a narrator, not an AI assistant summarizing.
-- Lead every story with the hard fact: the company, the number, the version, the CVE ID,
-  the benchmark result, the dollar amount. Specifics first, always.
-- State facts flatly and let them land. Do NOT explain "why this matters" or add a
-  takeaway sentence — the audience already knows why it matters. Trust them.
-- NEVER use these: "one user review says", "reviewers say", "according to reports",
-  "sources say", "in a move that", "the tech world", "buckle up", "let's dive in",
-  "stay tuned", "it's worth noting", "interestingly", "notably".
-- NO hype adjectives: no "exciting", "fascinating", "groundbreaking", "revolutionary",
-  "game-changer", "massive", "huge" (unless it's a literal figure).
-- Use real contractions and natural rhythm. Short declarative sentences. Occasional
-  dry aside is fine. Vary sentence length so it doesn't sound like a list.
-- Transitions between stories should be minimal and natural ("Elsewhere," "Meanwhile,"
-  "In chips,") — never "Our next story is" or "Moving on to".
-- Say numbers and acronyms the way a person would out loud (e.g. "a hundred million
-  dollars", "GPT", "the C-V-E").
+JUDGE EACH STORY AND ALLOCATE TIME ACCORDINGLY:
+Not every story deserves equal time. Before writing, rank the stories you chose by
+how big a deal they actually are to a technical audience.
+- The 1-2 BIGGEST stories (major AI model, huge acquisition, serious security event):
+  give each a solid 5-6 sentences with real substance.
+- Mid-tier stories: 3-4 sentences.
+- Minor stories (incremental release, small update): 1-2 sentences. Just hit the
+  headline fact and move on. It is completely fine for a minor story to be quick.
+This variation in length is what makes it sound like a real host with judgment,
+not a machine giving everything equal weight.
+
+TALK LIKE A HOST, NOT LIKE DOCUMENTATION:
+- Explain what changed and why an engineer would care — at the altitude a smart
+  person wants while half-listening on a commute. NOT an exhaustive changelog.
+- BAD (do not do this): listing every crate, function name, syscall, config flag,
+  or percentage from a release. Nobody wants to hear "the gix-pack cache delta
+  decode crate" read aloud.
+- GOOD: "Git 2.55 is out, and the headline is Rust support is now on by default —
+  part of the slow migration away from C for memory safety. There's also a fix for
+  interactive rebase that was mangling merge commits, and some solid speedups for
+  git status on Windows." Then move on.
+- Give the ONE or TWO details that matter, not all ten.
+
+NO SYMBOLS, CODE, OR PATHS — CRITICAL FOR AUDIO:
+This is read aloud by text-to-speech. It must contain ZERO of the following:
+- No backticks, no code snippets, no function names, no file paths, no crate names
+- No special characters like \\ * ? / _ :: -> or bracket syntax
+- No syscall notation like stat(2), no camelCase API names read as code
+- Spell everything as spoken words. Say "version two point five five" not "2.55"
+  only if it flows naturally — otherwise "Git two-point-five-five" is fine.
+- If a detail can only be expressed in code or symbols, LEAVE IT OUT. It doesn't
+  belong in audio.
+
+VOICE:
+- Real contractions, natural rhythm, varied sentence length.
+- Lead with the concrete fact: company, number, what shipped.
+- Do NOT add "why this matters" sermons or vague attributions ("reports say").
+- Ban these words: exciting, fascinating, groundbreaking, revolutionary, game-changer,
+  buckle up, let's dive in, stay tuned, it's worth noting, interestingly, notably.
+- Minimal natural transitions between stories (Meanwhile, Elsewhere, In security).
 
 FORMAT:
-- NO markdown, NO bullets, NO asterisks, NO headers. Spoken prose only.
-- Do NOT name the news outlets.
-- Do NOT start sentences with "today" or "here's".
-- Open with ONE tight line: the date and that this is the day's tech. No throat-clearing.
-- Then the five stories back to back, each 3-5 sentences of dense factual coverage.
-- End with ONE dry sign-off line. No "thanks for listening".
+- Spoken prose only. No markdown, bullets, asterisks, or headers.
+- Don't name the news outlets. Don't start sentences with "today" or "here's".
+- Open with one tight line (the date, that it's the day's tech). End with one dry line.
 
-LENGTH — REQUIRED: 750 to 850 words total. This is a 5-6 minute episode. If your
-draft is under 750 words, add more concrete technical detail to each story (specs,
-numbers, names, context a technical listener would want) until you reach it.
+LENGTH: The episode should always run about 5 minutes — roughly 700 words total,
+NO MATTER how many stories you cover. This is important: if you only cover 3 stories,
+give each one MORE depth and context so the episode still fills 5 minutes. If you
+cover 7, keep each tighter. Fewer stories means richer coverage of each, not a
+shorter episode. Distribute words UNEVENLY based on importance, but always land
+around 700 words total.
 
 Begin now:"""
 
@@ -330,9 +485,9 @@ Begin now:"""
         script = head.strip()
         titles = [t.strip() for t in tail.strip().split("|") if t.strip()]
 
-    # Fallback: if no titles parsed, use the candidate titles we sent
+    # Fallback: if no titles parsed, use the top candidate titles we sent
     if not titles:
-        titles = [c["title"] for c in candidates[:HEADLINES_COUNT]]
+        titles = [c["title"] for c in candidates[:MIN_STORIES]]
 
     return script, titles
 
@@ -348,14 +503,14 @@ def expand_script(short_script: str, target_low: int = 750) -> str:
 
     current = len(short_script.split())
     prompt = f"""This tech news podcast script is too short. It's {current} words
-but must be at least {target_low} words.
+but needs to be about {target_low} words for a full 5-minute episode.
 
-Expand it by adding more concrete technical detail to each of the five stories —
-specific numbers, version details, benchmark figures, names, and relevant context
-a technical listener would want. Do NOT add new stories. Do NOT add hype, filler,
-"why it matters" takeaways, or vague attributions. Keep the exact same dense,
-factual, engineer-to-engineer voice. Keep it as spoken prose with no markdown,
-bullets, or headers.
+Lengthen it by giving each story — especially the biggest one or two — more depth:
+more context on what happened, the background an engineer would want, and the
+implications. Do NOT add new stories. Do NOT add technical minutiae like function
+names, file paths, crate names, syscalls, or code symbols — this is read aloud by
+text-to-speech and symbols sound broken. Do NOT add hype or "why it matters" filler.
+Keep the same conversational engineer-to-engineer voice. Spoken prose only, no markdown.
 
 Return ONLY the expanded script, nothing else.
 
@@ -388,16 +543,44 @@ SCRIPT TO EXPAND:
     return short_script
 
 
+def clean_for_speech(script: str) -> str:
+    """
+    Safety net: strip characters and patterns that sound broken when read aloud
+    by TTS, in case any slipped past the prompt. Preserves normal punctuation.
+    """
+    import re
+
+    text = script
+
+    # Remove code spans / backticks entirely (keep inner text but drop the ticks)
+    text = text.replace("`", "")
+    # Remove markdown emphasis characters
+    text = text.replace("*", "").replace("_", "")
+    # Remove bracketed/paren code-ish notation like stat(2) -> stat
+    text = re.sub(r"\(\d+\)", "", text)
+    # Collapse "::" and "->" and "/" path separators to spaces
+    text = text.replace("::", " ").replace("->", " ").replace("\\", " ")
+    # Remove standalone code-symbol characters that don't belong in speech
+    text = re.sub(r"[<>|{}\[\]#~^]", "", text)
+    # Fix leftover double spaces and space-before-punctuation
+    text = re.sub(r"\s+([.,;:!?])", r"\1", text)
+    text = re.sub(r"[ \t]{2,}", " ", text)
+
+    return text.strip()
+
+
 def text_to_speech(script: str, output_path: str) -> bool:
     try:
         import edge_tts
         import asyncio
 
+        script = clean_for_speech(script)
+
         # AndrewMultilingual — warm, natural, conversational. Much less robotic
         # than GuyNeural. Other good options: en-US-BrianMultilingualNeural (relaxed),
         # en-US-AvaMultilingualNeural (female, natural).
         VOICE = "en-US-AndrewMultilingualNeural"
-        RATE  = "+8%"   # closer to natural pace; less "news-ticker" than +15%
+        RATE  = "+10%"   # natural but with a bit of pace
 
         async def _synth():
             communicate = edge_tts.Communicate(script, VOICE, rate=RATE)
@@ -486,23 +669,29 @@ def main():
     candidates = gather_candidates(memory)
     print(f"  {len(candidates)} candidate stories after filtering")
 
+    # Dynamic ceiling: cap at MAX_STORIES, but lower it if the news pool is thin.
+    # Roughly: allow 1 story per ~3 candidates, clamped to [MIN_STORIES, MAX_STORIES].
+    ceiling = max(MIN_STORIES, min(MAX_STORIES, len(candidates) // 3))
+    print(f"  Story ceiling for today: {ceiling} (Gemini picks {MIN_STORIES}-{ceiling})")
+
     print(f"[{today_str}] Writing script with Gemini...")
-    script, titles = write_script_gemini(candidates)
+    script, titles = write_script_gemini(candidates, ceiling)
     word_count = len(script.split())
-    print(f"  Script: {word_count} words (~{word_count // 130} min)")
-    print(f"  Stories chosen: {len(titles)}")
+    n_stories = len(titles)
+    print(f"  Stories chosen: {n_stories}")
     for t in titles:
         print(f"    - {t[:70]}")
+    print(f"  Script: {word_count} words (~{word_count // 130} min)")
 
-    # If short, try to expand once before giving up
-    if word_count < 700:
-        print(f"  Under target — asking Gemini to expand...")
-        script = expand_script(script, target_low=750)
+    # Always aim for ~5 minutes (~700 words). Expand if short regardless of story count.
+    if word_count < 620:
+        print(f"  Under 5-min target — asking Gemini to expand...")
+        script = expand_script(script, target_low=700)
         word_count = len(script.split())
         print(f"  After expansion: {word_count} words (~{word_count // 130} min)")
 
-    # Safety guard: never publish a stub. 600 words ≈ 4.5 min, our floor.
-    if word_count < 600:
+    # Absolute stub guard: below this, something is genuinely broken.
+    if word_count < 450:
         raise RuntimeError(
             f"Script too short ({word_count} words) — aborting so we don't "
             "publish a broken episode. Check the Gemini response above."
