@@ -321,7 +321,7 @@
     }
 
     .player-bar {
-      margin-top: 1.5rem;
+      margin-bottom: 1.5rem;
       padding: 1rem 1.25rem;
       background: var(--card);
       border: 1px solid var(--red);
@@ -487,19 +487,19 @@
 <section class="episodes-section" id="episodes">
   <div class="section-label">Latest Episodes</div>
 
-  <!-- Episodes are loaded dynamically from feed.xml by the script below -->
-  <div id="episode-list" class="episode-list">
-    <div class="episodes-placeholder" id="episodes-loading">
-      Loading episodes…
-    </div>
-  </div>
-
-  <!-- Sticky audio player, hidden until an episode is played -->
+  <!-- Player sits at the TOP of the section, hidden until an episode is played -->
   <div id="player-bar" class="player-bar" style="display:none;">
     <div class="player-info">
       <div class="player-now-playing" id="player-title">—</div>
     </div>
     <audio id="audio-player" controls style="width:100%;"></audio>
+  </div>
+
+  <!-- Episodes loaded dynamically from feed.xml -->
+  <div id="episode-list" class="episode-list">
+    <div class="episodes-placeholder" id="episodes-loading">
+      Loading episodes…
+    </div>
   </div>
 </section>
 
@@ -516,9 +516,39 @@
       return d.toLocaleDateString(undefined, { month: 'short', day: 'numeric', year: 'numeric' });
     }
     function fmtDuration(sec) {
-      if (!sec || isNaN(sec)) return '';
-      const m = Math.round(sec / 60);
+      if (!sec || isNaN(sec) || sec <= 0) return '';
+      const m = Math.floor(sec / 60);
+      const s = Math.round(sec % 60);
+      if (m < 1) return s + ' sec';
       return m + ' min';
+    }
+
+    // Check an MP3 actually exists (skip deleted episodes)
+    async function mp3Exists(url) {
+      if (!url) return false;
+      try {
+        const r = await fetch(url, { method: 'HEAD', cache: 'no-store' });
+        return r.ok;
+      } catch (e) {
+        return false;
+      }
+    }
+
+    // Read the real duration from the audio file's metadata
+    function readDuration(url) {
+      return new Promise(resolve => {
+        const probe = new Audio();
+        probe.preload = 'metadata';
+        probe.src = url;
+        const done = () => {
+          const d = probe.duration;
+          resolve(isFinite(d) && d > 0 ? d : 0);
+        };
+        probe.addEventListener('loadedmetadata', done);
+        probe.addEventListener('error', () => resolve(0));
+        // Safety timeout so a slow file doesn't hang the list
+        setTimeout(() => resolve(probe.duration || 0), 4000);
+      });
     }
 
     try {
@@ -533,21 +563,26 @@
         return;
       }
 
-      // Newest first
-      const episodes = items.map(item => {
-        const title    = item.querySelector('title')?.textContent || 'Episode';
-        const desc      = item.querySelector('description')?.textContent || '';
-        const pubDate  = new Date(item.querySelector('pubDate')?.textContent || '');
+      let episodes = items.map(item => {
+        const title     = item.querySelector('title')?.textContent || 'Episode';
+        const pubDate   = new Date(item.querySelector('pubDate')?.textContent || '');
         const enclosure = item.querySelector('enclosure');
-        const url      = enclosure ? enclosure.getAttribute('url') : '';
-        const durNode  = item.getElementsByTagName('itunes:duration')[0];
-        const dur      = durNode ? parseInt(durNode.textContent, 10) : 0;
-        return { title, desc, pubDate, url, dur };
+        const url       = enclosure ? enclosure.getAttribute('url') : '';
+        return { title, pubDate, url };
       }).sort((a, b) => b.pubDate - a.pubDate);
+
+      // Keep only episodes whose MP3 actually exists
+      const checks = await Promise.all(episodes.map(ep => mp3Exists(ep.url)));
+      episodes = episodes.filter((ep, i) => checks[i]);
+
+      if (episodes.length === 0) {
+        loadingEl.textContent = 'No playable episodes right now.';
+        return;
+      }
 
       listEl.innerHTML = '';
 
-      episodes.forEach((ep, i) => {
+      episodes.forEach(ep => {
         const row = document.createElement('div');
         row.className = 'episode';
         row.innerHTML = `
@@ -558,14 +593,18 @@
             <div class="episode-title"></div>
             <div class="episode-date"></div>
           </div>
-          <div class="episode-duration"></div>
+          <div class="episode-duration">…</div>
         `;
         row.querySelector('.episode-title').textContent = ep.title;
         row.querySelector('.episode-date').textContent  = fmtDate(ep.pubDate);
-        row.querySelector('.episode-duration').textContent = fmtDuration(ep.dur);
+
+        // Fill in the real duration once metadata loads
+        const durEl = row.querySelector('.episode-duration');
+        readDuration(ep.url).then(sec => {
+          durEl.textContent = fmtDuration(sec);
+        });
 
         function play() {
-          if (!ep.url) return;
           audioEl.src = ep.url;
           titleEl.textContent = ep.title;
           playerBar.style.display = 'block';
