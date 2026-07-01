@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+  xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Daily Dump Tech</title>
+    <link>https://cbrollin45.github.io/daily-dump-tech</link>
+    <description>Fast daily tech news. No fluff. Five minutes.</description>
+    <language>en-us</language>
+    <itunes:author>Daily Dump Bot</itunes:author>
+    <itunes:category text="News"/>
+    <itunes:explicit>false</itunes:explicit>
+    <itunes:image href="https://cbrollin45.github.io/daily-dump-tech/cover.jpg"/>
+    <!-- EPISODES -->
+
+  <item>
+    <title>Daily Dump Tech — 2026-07-01</title>
+    <description>Five tech stories for 2026-07-01.</description>
+    <pubDate>Wed, 01 Jul 2026 01:08:02 +0000</pubDate>
+    <enclosure url="https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3" length="83952" type="audio/mpeg"/>
+    <itunes:duration>5</itunes:duration>
+    <guid isPermaLink="false">https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3</guid>
+  </item>
+  </channel>
+</rss>
