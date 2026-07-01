@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 3000 3000" width="3000" height="3000">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@800;900&amp;family=Barlow:wght@400;600&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="3000" height="3000" fill="#0D0D0D"/>
+
+  <!-- Red accent bar top -->
+  <rect x="0" y="0" width="3000" height="18" fill="#E8272A"/>
+
+  <!-- Red accent bar bottom -->
+  <rect x="0" y="2982" width="3000" height="18" fill="#E8272A"/>
+
+  <!-- Subtle grid texture lines -->
+  <line x1="0" y1="900" x2="3000" y2="900" stroke="#1C1C1C" stroke-width="2"/>
+  <line x1="0" y1="2100" x2="3000" y2="2100" stroke="#1C1C1C" stroke-width="2"/>
+  <line x1="900" y1="0" x2="900" y2="3000" stroke="#1C1C1C" stroke-width="2"/>
+  <line x1="2100" y1="0" x2="2100" y2="3000" stroke="#1C1C1C" stroke-width="2"/>
+
+  <!-- Signal dot — broadcast/radio metaphor -->
+  <circle cx="1500" cy="960" r="38" fill="#E8272A"/>
+  <circle cx="1500" cy="960" r="80" fill="none" stroke="#E8272A" stroke-width="6" opacity="0.5"/>
+  <circle cx="1500" cy="960" r="130" fill="none" stroke="#E8272A" stroke-width="3" opacity="0.25"/>
+  <circle cx="1500" cy="960" r="185" fill="none" stroke="#E8272A" stroke-width="2" opacity="0.12"/>
+
+  <!-- DAILY — tight condensed, white -->
+  <text
+    x="1500"
+    y="1420"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-weight="800"
+    font-size="320"
+    fill="#F0EDE8"
+    text-anchor="middle"
+    letter-spacing="40"
+  >DAILY</text>
+
+  <!-- Red divider rule -->
+  <rect x="340" y="1470" width="2320" height="10" fill="#E8272A"/>
+
+  <!-- DUMP — massive, dominant -->
+  <text
+    x="1500"
+    y="1990"
+    font-family="'Barlow Condensed', 'Arial Narrow', Arial, sans-serif"
+    font-weight="900"
+    font-size="600"
+    fill="#F0EDE8"
+    text-anchor="middle"
+    letter-spacing="-10"
+  >DUMP</text>
+
+  <!-- Tagline -->
+  <text
+    x="1500"
+    y="2240"
+    font-family="'Barlow', Arial, sans-serif"
+    font-weight="400"
+    font-size="88"
+    fill="#666666"
+    text-anchor="middle"
+    letter-spacing="12"
+  >TECH · FINANCE · DAILY</text>
+
+  <!-- Bottom red accent rule -->
+  <rect x="340" y="2310" width="2320" height="4" fill="#E8272A" opacity="0.4"/>
+</svg>
