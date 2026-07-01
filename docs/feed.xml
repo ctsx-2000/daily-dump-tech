@@ -11,7 +11,16 @@
     <itunes:category text="News"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:image href="https://cbrollin45.github.io/daily-dump-tech/cover.jpg"/>
-    <!-- EPISODES -->
+  
+  <item>
+    <title>Daily Dump Tech — 2026-07-01</title>
+    <description>Five tech stories for 2026-07-01.</description>
+    <pubDate>Wed, 01 Jul 2026 01:18:05 +0000</pubDate>
+    <enclosure url="https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3" length="118944" type="audio/mpeg"/>
+    <itunes:duration>7</itunes:duration>
+    <guid isPermaLink="false">https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3</guid>
+  </item>
+  <!-- EPISODES -->
 
   <item>
     <title>Daily Dump Tech — 2026-07-01</title>
