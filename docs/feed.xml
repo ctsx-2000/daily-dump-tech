@@ -11,60 +11,15 @@
     <itunes:category text="News"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:image href="https://cbrollin45.github.io/daily-dump-tech/cover.jpg"/>
-  
-  <item>
-    <title>Daily Dump Tech — 2026-07-01</title>
-    <description>Five tech stories for 2026-07-01.</description>
-    <pubDate>Wed, 01 Jul 2026 01:18:05 +0000</pubDate>
-    <enclosure url="https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3" length="118944" type="audio/mpeg"/>
-    <itunes:duration>7</itunes:duration>
-    <guid isPermaLink="false">https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3</guid>
-  </item>
-
-  <item>
-    <title>Daily Dump Tech — 2026-07-01</title>
-    <description>Five tech stories for 2026-07-01.</description>
-    <pubDate>Wed, 01 Jul 2026 01:20:31 +0000</pubDate>
-    <enclosure url="https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3" length="103680" type="audio/mpeg"/>
-    <itunes:duration>6</itunes:duration>
-    <guid isPermaLink="false">https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3</guid>
-  </item>
-
-  <item>
-    <title>Daily Dump Tech — 2026-07-01</title>
-    <description>Five tech stories for 2026-07-01.</description>
-    <pubDate>Wed, 01 Jul 2026 01:37:08 +0000</pubDate>
-    <enclosure url="https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3" length="1355760" type="audio/mpeg"/>
-    <itunes:duration>84</itunes:duration>
-    <guid isPermaLink="false">https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3</guid>
-  </item>
 
   <item>
     <title>Daily Dump: Tech — 2026-07-01</title>
     <description>Five tech stories for 2026-07-01.</description>
-    <pubDate>Wed, 01 Jul 2026 01:53:38 +0000</pubDate>
-    <enclosure url="https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3" length="1930752" type="audio/mpeg"/>
-    <itunes:duration>120</itunes:duration>
-    <guid isPermaLink="false">https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3</guid>
-  </item>
-
-  <item>
-    <title>Daily Dump: Tech — 2026-07-01</title>
-    <description>Five tech stories for 2026-07-01.</description>
-    <pubDate>Wed, 01 Jul 2026 02:30:19 +0000</pubDate>
-    <enclosure url="https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3" length="1545408" type="audio/mpeg"/>
-    <itunes:duration>96</itunes:duration>
-    <guid isPermaLink="false">https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3</guid>
+    <pubDate>Wed, 01 Jul 2026 02:48:45 +0000</pubDate>
+    <enclosure url="https://ctsx-2000.github.io/daily-dump-tech//episodes/daily-dump-tech-2026-07-01.mp3" length="1685520" type="audio/mpeg"/>
+    <itunes:duration>280</itunes:duration>
+    <guid isPermaLink="false">https://ctsx-2000.github.io/daily-dump-tech//episodes/daily-dump-tech-2026-07-01.mp3</guid>
   </item>
   <!-- EPISODES -->
-
-  <item>
-    <title>Daily Dump Tech — 2026-07-01</title>
-    <description>Five tech stories for 2026-07-01.</description>
-    <pubDate>Wed, 01 Jul 2026 01:08:02 +0000</pubDate>
-    <enclosure url="https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3" length="83952" type="audio/mpeg"/>
-    <itunes:duration>5</itunes:duration>
-    <guid isPermaLink="false">https://cbrollin45.github.io/daily-dump-tech/episodes/daily-dump-tech-2026-07-01.mp3</guid>
-  </item>
   </channel>
 </rss>
