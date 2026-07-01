@@ -252,14 +252,18 @@ SCRIPT:
 SCRIPT RULES:
 - Fast, punchy news anchor energy. No fluff.
 - No filler phrases: no "Let's dive in", "Stay tuned", "Without further ado"
-- Each story: 2-3 tight sentences
 - Write for the ear — short sentences, active voice
 - NO bullet points, NO markdown, NO asterisks, NO headers
 - Do NOT name news sources
 - Do NOT start sentences with "today" or "here's"
-- Length: 650-750 words (about 5 minutes of audio). This length is required.
+- CRITICAL LENGTH REQUIREMENT: The script MUST be between 650 and 750 words.
+  This is roughly 130 words per story. Give each of the five stories a FULL
+  3 to 4 sentences: what happened, why it matters, and one extra detail or
+  implication. Do not write one-line blurbs. If your draft is under 650 words,
+  expand each story with more context until you hit the target. Count as you go.
 - Structure: one cold-open sentence (mention the date and "five stories in tech"),
-  then the five stories back to back, then one dry punchy sign-off sentence.
+  then the five stories back to back with full treatment, then one dry punchy
+  sign-off sentence.
 
 Begin now:"""
 
@@ -411,8 +415,8 @@ def main():
     for t in titles:
         print(f"    - {t[:70]}")
 
-    # Safety guard: never publish a stub
-    if word_count < 300:
+    # Safety guard: never publish a stub. 450 words ≈ 3.5 min, our floor.
+    if word_count < 450:
         raise RuntimeError(
             f"Script too short ({word_count} words) — aborting so we don't "
             "publish a broken episode. Check the Gemini response above."
