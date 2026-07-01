@@ -2,10 +2,12 @@ name: Generate Daily Dump Tech
 
 on:
   schedule:
-    # 5am EDT (summer) = 09:00 UTC
-    # Change to '0 10 * * *' in November for EST (winter)
-    - cron: '0 9 * * *'
-  workflow_dispatch:  # manual trigger from Actions tab
+    # 5am Central Time.
+    #   Summer (CDT, ~Mar–Nov): 5am CDT = 10:00 UTC  -> '0 10 * * *'
+    #   Winter (CST, ~Nov–Mar): 5am CST = 11:00 UTC  -> '0 11 * * *'
+    # Currently set for CDT. Change to '0 11 * * *' when clocks fall back in November.
+    - cron: '0 10 * * *'
+  workflow_dispatch:  # manual trigger from the Actions tab
 
 jobs:
   generate:
