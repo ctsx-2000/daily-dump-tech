@@ -47,7 +47,57 @@ PODCAST_AUTHOR      = "Daily Dump Bot"
 PODCAST_BASE_URL    = os.environ.get(
     "PODCAST_BASE_URL", "https://example.github.io/daily-dump-tech"
 )
+
+# Gemini model. 3.1 Flash-Lite: free tier, 15 RPM (vs 10 for 3 Flash), quality
+# on par with 2.5 Flash, better instruction following. One-line swap if needed.
+GEMINI_MODEL = "gemini-3.1-flash-lite"
 # ─────────────────────────────────────────────────────────────────────────────
+
+
+def call_gemini(prompt: str, temperature: float = 0.8,
+                max_tokens: int = 5000) -> str:
+    """
+    Single shared Gemini caller. Uses the Gemini 3.x thinkingLevel control
+    (minimal = fastest, cheapest, full output budget for the script). If the
+    model rejects that config (older/newer API variations), retries once
+    without any thinkingConfig rather than failing the whole run.
+    """
+    api_key = os.environ.get("GEMINI_API_KEY", "")
+    if not api_key:
+        raise ValueError("GEMINI_API_KEY not set")
+
+    url = (
+        "https://generativelanguage.googleapis.com/v1beta/models/"
+        f"{GEMINI_MODEL}:generateContent?key={api_key}"
+    )
+
+    def _payload(with_thinking: bool):
+        cfg = {"temperature": temperature, "maxOutputTokens": max_tokens}
+        if with_thinking:
+            cfg["thinkingConfig"] = {"thinkingLevel": "minimal"}
+        return {"contents": [{"parts": [{"text": prompt}]}],
+                "generationConfig": cfg}
+
+    last_err = None
+    for with_thinking in (True, False):
+        try:
+            resp = requests.post(url, json=_payload(with_thinking), timeout=90)
+            if resp.status_code == 400 and with_thinking:
+                # thinkingConfig shape rejected — retry without it
+                print("  (thinkingConfig rejected, retrying without it)")
+                continue
+            resp.raise_for_status()
+            data = resp.json()
+            parts = data["candidates"][0].get("content", {}).get("parts", [])
+            text = "".join(p.get("text", "") for p in parts).strip()
+            if text:
+                return text
+            last_err = RuntimeError(
+                f"Gemini returned empty text. Raw: {json.dumps(data)[:500]}"
+            )
+        except Exception as e:
+            last_err = e
+    raise last_err
 
 
 # ── STORY MEMORY ─────────────────────────────────────────────────────────────
@@ -634,30 +684,7 @@ UNEVENLY based on importance, but always land around 790 words total.
 
 Begin now:"""
 
-    url = (
-        "https://generativelanguage.googleapis.com/v1beta/models/"
-        f"gemini-2.5-flash:generateContent?key={api_key}"
-    )
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature":      0.8,
-            "maxOutputTokens":  5000,
-            "thinkingConfig": {"thinkingBudget": 0},
-        },
-    }
-
-    resp = requests.post(url, json=payload, timeout=60)
-    resp.raise_for_status()
-    data = resp.json()
-
-    # Robust extraction — handle multi-part responses
-    candidate = data["candidates"][0]
-    parts = candidate.get("content", {}).get("parts", [])
-    full_text = "".join(p.get("text", "") for p in parts).strip()
-
-    if not full_text:
-        raise RuntimeError(f"Gemini returned empty text. Raw: {json.dumps(data)[:500]}")
+    full_text = call_gemini(prompt, temperature=0.8, max_tokens=5000)
 
     # Parse the "TITLES: ... \n SCRIPT: ..." format
     script, titles = full_text, []
@@ -706,24 +733,8 @@ Return ONLY the expanded script, nothing else.
 SCRIPT TO EXPAND:
 {short_script}"""
 
-    url = (
-        "https://generativelanguage.googleapis.com/v1beta/models/"
-        f"gemini-2.5-flash:generateContent?key={api_key}"
-    )
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature":      0.8,
-            "maxOutputTokens":  5000,
-            "thinkingConfig": {"thinkingBudget": 0},
-        },
-    }
     try:
-        resp = requests.post(url, json=payload, timeout=60)
-        resp.raise_for_status()
-        data = resp.json()
-        parts = data["candidates"][0].get("content", {}).get("parts", [])
-        expanded = "".join(p.get("text", "") for p in parts).strip()
+        expanded = call_gemini(prompt, temperature=0.8, max_tokens=5000)
         # Keep whichever is longer, just in case
         if len(expanded.split()) > len(short_script.split()):
             return expanded
@@ -758,24 +769,8 @@ Return ONLY the tightened script, nothing else.
 SCRIPT TO TIGHTEN:
 {long_script}"""
 
-    url = (
-        "https://generativelanguage.googleapis.com/v1beta/models/"
-        f"gemini-2.5-flash:generateContent?key={api_key}"
-    )
-    payload = {
-        "contents": [{"parts": [{"text": prompt}]}],
-        "generationConfig": {
-            "temperature":      0.7,
-            "maxOutputTokens":  5000,
-            "thinkingConfig": {"thinkingBudget": 0},
-        },
-    }
     try:
-        resp = requests.post(url, json=payload, timeout=60)
-        resp.raise_for_status()
-        data = resp.json()
-        parts = data["candidates"][0].get("content", {}).get("parts", [])
-        tightened = "".join(p.get("text", "") for p in parts).strip()
+        tightened = call_gemini(prompt, temperature=0.7, max_tokens=5000)
         # Only accept if it actually got shorter but didn't collapse
         if 400 < _script_wordcount(tightened) < current:
             return tightened
