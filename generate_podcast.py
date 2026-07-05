@@ -56,6 +56,61 @@ def story_key(title: str) -> str:
     return hashlib.md5(title.lower().strip().encode()).hexdigest()[:12]
 
 
+_MEMORY_STOPWORDS = {
+    "the", "a", "an", "to", "of", "in", "on", "for", "with", "and", "or",
+    "at", "by", "is", "are", "as", "new", "now", "its", "it", "this", "that",
+    "from", "has", "have", "will", "after", "over", "into", "up", "out",
+    "how", "why", "what", "when", "who", "your", "you", "here", "gets",
+    "could", "would", "says", "said", "than", "but", "not", "all", "can",
+    # Common news verbs — shared verbs don't mean shared story
+    "launches", "launched", "announces", "announced", "releases", "released",
+    "ships", "shipped", "unveils", "unveiled", "introduces", "introduced",
+    "reveals", "revealed", "expands", "expanded", "rolls", "rolling", "hits",
+    "faces", "facing", "gets", "getting", "makes", "making", "takes", "using",
+}
+
+
+def _title_sig_words(title: str) -> set:
+    t = re.sub(r"[^a-z0-9 ]", "", title.lower())
+    return {w for w in t.split() if w not in _MEMORY_STOPWORDS and len(w) > 2}
+
+
+def was_recently_covered(title: str, memory: dict):
+    """
+    Fuzzy check: is this headline the same STORY as one covered recently?
+    Exact-hash matching fails across days because outlets re-headline the same
+    event ("OpenAI launches GPT-5" -> "GPT-5 rollout expands").
+    Matches if any of:
+      - 2+ shared significant words (with news verbs stopworded out)
+      - a shared distinctive token containing a digit (gpt5, ios26, m5...)
+      - >= 50% overlap of the smaller word set
+    Returns the matching memory entry (dict) if found, else None.
+    """
+    words = _title_sig_words(title)
+    if not words:
+        return None
+    today = datetime.date.today()
+    for entry in memory.values():
+        try:
+            covered = datetime.date.fromisoformat(entry["date"])
+        except Exception:
+            continue
+        if (today - covered).days >= STORY_MEMORY_DAYS:
+            continue
+        prev_words = _title_sig_words(entry.get("title", ""))
+        if not prev_words:
+            continue
+        overlap = words & prev_words
+        if not overlap:
+            continue
+        smaller = min(len(words), len(prev_words))
+        ratio = len(overlap) / smaller if smaller else 0
+        digit_entity = any(any(c.isdigit() for c in w) for w in overlap)
+        if len(overlap) >= 2 or digit_entity or ratio >= 0.5:
+            return entry
+    return None
+
+
 def load_memory() -> dict:
     if os.path.exists(MEMORY_FILE):
         try:
@@ -82,17 +137,6 @@ def purge_old_memory(memory: dict, days: int = 14) -> dict:
         except Exception:
             continue
     return keep
-
-
-def was_recently_covered(title: str, memory: dict) -> bool:
-    key = story_key(title)
-    if key not in memory:
-        return False
-    try:
-        covered = datetime.date.fromisoformat(memory[key]["date"])
-    except Exception:
-        return False
-    return (datetime.date.today() - covered).days < STORY_MEMORY_DAYS
 
 
 def mark_covered(titles: list, memory: dict) -> dict:
@@ -331,10 +375,9 @@ def gather_candidates(memory: dict) -> list:
     # justifies re-covering. Stories never covered pass through untouched.
     fresh, recently_covered = [], []
     for a in unique:
-        if was_recently_covered(a["title"], memory):
-            key = story_key(a["title"])
-            prior = memory.get(key, {})
-            a["_prior_date"] = prior.get("date", "")
+        prior = was_recently_covered(a["title"], memory)
+        if prior:
+            a["_prior_date"]  = prior.get("date", "")
             a["_prior_title"] = prior.get("title", "")
             recently_covered.append(a)
         else:
@@ -513,9 +556,26 @@ WORKED EXAMPLES:
   (The "under a second" is signal — it's a real capability. The specific cat and the
   specific developer are noise.)
 
+FACTS ONLY — NO SPECULATION, NO ANALYSIS, NO OPINION:
+You are a news anchor, not a commentator. Report what HAPPENED. Never add your own
+interpretation, prediction, or opinion. This is a hard rule:
+- BANNED: "this could imply...", "this might affect...", "this may signal...",
+  "expect to see...", "this suggests...", "it remains to be seen...", "time will
+  tell...", "this positions them to...", "this raises questions about...",
+  "in the long run...", or ANY sentence about what might/could/may happen.
+- If a sentence is about the FUTURE or about MEANING rather than about what
+  happened, delete it. The listener draws their own conclusions — that's the
+  respect this show pays its audience.
+- Factual context IS allowed and good: what it replaces, what it costs, what it's
+  compatible with, who currently uses it, what the previous version did. Those are
+  verifiable facts. "Analysts think X" and "this hints at Y" are not.
+- The one exception: a concrete stated plan is a fact. "The company says the fix
+  ships in August" is reporting. "This will probably help them compete" is opinion.
+
 TALK LIKE A HOST, NOT LIKE DOCUMENTATION:
-- Explain what changed and why an engineer would care — at the altitude a smart person
-  wants while half-listening on a commute. NOT an exhaustive changelog.
+- State what changed, plus the factual context that makes it meaningful (what it
+  replaces, real numbers, who's affected) — at the altitude a smart person wants
+  while half-listening on a commute. NOT an exhaustive changelog, and NOT commentary.
 - BAD: listing every crate, function name, syscall, config flag, or percentage from a
   release. Nobody wants to hear "the gix-pack cache delta decode crate" read aloud.
 - GOOD: "Git 2.55 is out, and the headline is Rust support is now on by default — part
@@ -633,10 +693,12 @@ def expand_script(short_script: str, target_low: int = 750) -> str:
 but needs to be about {target_low} words for a full 5-minute episode.
 
 Lengthen it by giving each story — especially the biggest one or two — more depth:
-more context on what happened, the background an engineer would want, and the
-implications. Do NOT add new stories. Do NOT add technical minutiae like function
-names, file paths, crate names, syscalls, or code symbols — this is read aloud by
-text-to-speech and symbols sound broken. Do NOT add hype or "why it matters" filler.
+more FACTS about what happened, factual background (what it replaces, real numbers,
+prior version, who's affected), and concrete details from the reporting. Do NOT add
+speculation, predictions, implications, or opinion — no "this could", "this might",
+"this suggests". Facts only. Do NOT add new stories. Do NOT add technical minutiae
+like function names, file paths, crate names, syscalls, or code symbols — this is
+read aloud by text-to-speech and symbols sound broken. Do NOT add hype.
 Keep the same conversational engineer-to-engineer voice. Spoken prose only, no markdown.
 
 Return ONLY the expanded script, nothing else.
