@@ -1,32 +1,4 @@
 {
-  "5fd09cc5dc29": {
-    "title": "Google Disrupts NetNut Residential Proxy Network",
-    "date": "2026-07-03"
-  },
-  "f221499d85d2": {
-    "title": "Apple Orders Foldable iPhone Ultra",
-    "date": "2026-07-03"
-  },
-  "3ff1515739fe": {
-    "title": "Sony and Xbox Moving Away from Physical Discs",
-    "date": "2026-07-03"
-  },
-  "46a697bfde9b": {
-    "title": "Gemini Spark Now on Mac",
-    "date": "2026-07-03"
-  },
-  "1cccc8629001": {
-    "title": "iOS 27 Scam Detection Framework",
-    "date": "2026-07-03"
-  },
-  "2427020759d3": {
-    "title": "Politician Hacked with Pegasus Spyware",
-    "date": "2026-07-03"
-  },
-  "c9ceeaf4115a": {
-    "title": "Finally, Mark Zuckerberg on AI Agent Progress",
-    "date": "2026-07-03"
-  },
   "625dd15f3aea": {
     "title": "New \"Bad Epoll\" Linux Kernel Flaw Lets Unprivileged Users Gain Root, Hits Android",
     "date": "2026-07-04"
@@ -1214,5 +1186,33 @@
   "facd0528678a": {
     "title": "Ukraine strikes Russian rocket factory with cruise missiles",
     "date": "2026-08-17"
+  },
+  "1295ef07766e": {
+    "title": "Anthropic revenue growth",
+    "date": "2026-08-18"
+  },
+  "6b053683ad8f": {
+    "title": "Reddit AI audio and video tests",
+    "date": "2026-08-18"
+  },
+  "3c1f928348b7": {
+    "title": "YouTube view count methodology",
+    "date": "2026-08-18"
+  },
+  "885fc20103e0": {
+    "title": "iOS security update",
+    "date": "2026-08-18"
+  },
+  "363323b7abd1": {
+    "title": "Supreme Court Verizon fine rejection",
+    "date": "2026-08-18"
+  },
+  "fbd364cec980": {
+    "title": "Higgsfield Series B funding",
+    "date": "2026-08-18"
+  },
+  "86a6f2c813ff": {
+    "title": "Former SpaceX engineers robotics factory",
+    "date": "2026-08-18"
   }
 }
