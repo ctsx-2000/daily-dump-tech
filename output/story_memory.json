@@ -1,20 +1,4 @@
 {
-  "9743af2c78cb": {
-    "title": "Microsoft is laying off 4,800 employees and spinning off four gaming studios",
-    "date": "2026-07-06"
-  },
-  "2a96db42d8b7": {
-    "title": "Agility Robotics files for public offering",
-    "date": "2026-07-06"
-  },
-  "417288a13418": {
-    "title": "Uber halts expansion plans in five European markets",
-    "date": "2026-07-06"
-  },
-  "c73612b6dba0": {
-    "title": "Station F expands AI accelerator program",
-    "date": "2026-07-06"
-  },
   "244a76499b50": {
     "title": "BeyondTrust Patches Critical Auth Bypass Flaws in Remote Support and PRA",
     "date": "2026-07-07"
@@ -1198,5 +1182,37 @@
   "7f5374d510a7": {
     "title": "FCC revises broadband speed standards",
     "date": "2026-08-20"
+  },
+  "b3d439803383": {
+    "title": "Framework BIOS Update",
+    "date": "2026-08-21"
+  },
+  "39a8d404d64a": {
+    "title": "Cloudflare Spectre Vulnerability",
+    "date": "2026-08-21"
+  },
+  "89e336ae923d": {
+    "title": "Micro1 Revenue Growth",
+    "date": "2026-08-21"
+  },
+  "10cb34709f89": {
+    "title": "ChatGPT Apple Messages Integration",
+    "date": "2026-08-21"
+  },
+  "6ba3c740bfb7": {
+    "title": "Google Discover AI Feed",
+    "date": "2026-08-21"
+  },
+  "4b4fad9a47c4": {
+    "title": "Roblox Regulatory Compliance",
+    "date": "2026-08-21"
+  },
+  "de26757d72ff": {
+    "title": "ClarityCheck Database Exposure",
+    "date": "2026-08-21"
+  },
+  "3ddd67c1613e": {
+    "title": "GitHub Capacity Failures",
+    "date": "2026-08-21"
   }
 }
