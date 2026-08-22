@@ -1,24 +1,4 @@
 {
-  "244a76499b50": {
-    "title": "BeyondTrust Patches Critical Auth Bypass Flaws in Remote Support and PRA",
-    "date": "2026-07-07"
-  },
-  "4bac221b91e6": {
-    "title": "The first American autonomous ground vehicles are fighting in Ukraine",
-    "date": "2026-07-07"
-  },
-  "404f1a0def8f": {
-    "title": "The AI-run ransomware attack still needed a human",
-    "date": "2026-07-07"
-  },
-  "5c216f406e6c": {
-    "title": "SK Hynix to go public in the United States",
-    "date": "2026-07-07"
-  },
-  "1ef65152281b": {
-    "title": "iOS 27 beta 3 features",
-    "date": "2026-07-07"
-  },
   "e9f570c535c0": {
     "title": "AI chip maker SambaNova raises one billion dollars",
     "date": "2026-07-08"
@@ -1214,5 +1194,33 @@
   "3ddd67c1613e": {
     "title": "GitHub Capacity Failures",
     "date": "2026-08-21"
+  },
+  "25ee655131b6": {
+    "title": "LinkedIn AI slop button",
+    "date": "2026-08-22"
+  },
+  "caff71906e84": {
+    "title": "Tesla door handle recall",
+    "date": "2026-08-22"
+  },
+  "3d97f02b6830": {
+    "title": "Google publisher traffic controls",
+    "date": "2026-08-22"
+  },
+  "f2ea3bd99024": {
+    "title": "Anthropic model restrictions",
+    "date": "2026-08-22"
+  },
+  "26d1abddb603": {
+    "title": "Rillet unicorn funding",
+    "date": "2026-08-22"
+  },
+  "158a7b5a6939": {
+    "title": "Walmart tap-to-pay rollout",
+    "date": "2026-08-22"
+  },
+  "86999c1849aa": {
+    "title": "Zillow rent inflation lawsuit",
+    "date": "2026-08-22"
   }
 }
