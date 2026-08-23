@@ -1,28 +1,4 @@
 {
-  "e9f570c535c0": {
-    "title": "AI chip maker SambaNova raises one billion dollars",
-    "date": "2026-07-08"
-  },
-  "ce9ff2fe81cc": {
-    "title": "ZML releases free inference optimization software",
-    "date": "2026-07-08"
-  },
-  "9687f454bf2d": {
-    "title": "UAT-7810 threat actor expands malware network",
-    "date": "2026-07-08"
-  },
-  "8905f404a496": {
-    "title": "SQLite-utils version four point zero released",
-    "date": "2026-07-08"
-  },
-  "4e4f2a789f2f": {
-    "title": "Meta updates smart glasses privacy features",
-    "date": "2026-07-08"
-  },
-  "0c4d5e9259ca": {
-    "title": "Discord fixes AI moderation bug",
-    "date": "2026-07-08"
-  },
   "93246844a22c": {
     "title": "OpenAI wants its new tool to do your work for you and with you",
     "date": "2026-07-10"
@@ -1222,5 +1198,29 @@
   "86999c1849aa": {
     "title": "Zillow rent inflation lawsuit",
     "date": "2026-08-22"
+  },
+  "f75b2e38e2c7": {
+    "title": "Amazon price hikes on hardware",
+    "date": "2026-08-23"
+  },
+  "81448f8739cc": {
+    "title": "US battery startups receive government funding",
+    "date": "2026-08-23"
+  },
+  "db54eac13ee0": {
+    "title": "AI containment concerns in research labs",
+    "date": "2026-08-23"
+  },
+  "c895dbf35ffe": {
+    "title": "Harvard startup program uses AI avatars",
+    "date": "2026-08-23"
+  },
+  "7c2e7f1680a4": {
+    "title": "Chinese regulators order Tesla safety recall",
+    "date": "2026-08-23"
+  },
+  "59dc027df3c2": {
+    "title": "WiFi router tracking research",
+    "date": "2026-08-23"
   }
 }
