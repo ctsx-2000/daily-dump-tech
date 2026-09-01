@@ -1,36 +1,4 @@
 {
-  "d6026cc881cd": {
-    "title": "Uber to acquire Delivery Hero",
-    "date": "2026-07-17"
-  },
-  "8b0184627a62": {
-    "title": "Google introduces AI avatars in Vids",
-    "date": "2026-07-17"
-  },
-  "f1f43c86c5de": {
-    "title": "OpenAI releases hardware keyboard",
-    "date": "2026-07-17"
-  },
-  "20844bf51247": {
-    "title": "T-Mobile to restore canceled customer lines",
-    "date": "2026-07-17"
-  },
-  "039b2213f3b3": {
-    "title": "New macOS malware targets user passwords",
-    "date": "2026-07-17"
-  },
-  "41dbb5d6d734": {
-    "title": "Netflix reports generative AI usage",
-    "date": "2026-07-17"
-  },
-  "6eadeb5513da": {
-    "title": "Valve confirms continued battery supply for Steam Deck",
-    "date": "2026-07-17"
-  },
-  "19b89e25f9f6": {
-    "title": "SpaceX scrubs Starship launch",
-    "date": "2026-07-17"
-  },
   "c622198e49fc": {
     "title": "Apple Music Subscription Price Hikes",
     "date": "2026-07-18"
@@ -1278,5 +1246,33 @@
   "a0f15201584a": {
     "title": "George Santos receives lifetime ban from Kalshi",
     "date": "2026-08-31"
+  },
+  "6021a84ded4e": {
+    "title": "John Ternus is now the CEO of Apple",
+    "date": "2026-09-01"
+  },
+  "1cd5906b7328": {
+    "title": "Apple shares evidence against former employee accused of stealing data for OpenAI",
+    "date": "2026-09-01"
+  },
+  "5e1f640f1898": {
+    "title": "FTC accuses Amazon of secret ad surcharge scheme",
+    "date": "2026-09-01"
+  },
+  "14d8a4ee91c3": {
+    "title": "PlayStation to pay seven point eight five million dollars in class action settlement",
+    "date": "2026-09-01"
+  },
+  "3ca82b97610f": {
+    "title": "Valve archive leaks twelve terabytes of internal development data",
+    "date": "2026-09-01"
+  },
+  "70fa4c1c5576": {
+    "title": "NVIDIA DLSS five performance drop on RTX thirty series",
+    "date": "2026-09-01"
+  },
+  "e21b29f7fae6": {
+    "title": "Google increases price of Google TV Streamer",
+    "date": "2026-09-01"
   }
 }
