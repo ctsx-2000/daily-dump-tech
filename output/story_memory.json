@@ -1,28 +1,4 @@
 {
-  "40cde2a1803e": {
-    "title": "WordPress Core RCE vulnerabilities",
-    "date": "2026-07-19"
-  },
-  "dab4418f746e": {
-    "title": "Federal employee TikTok access",
-    "date": "2026-07-19"
-  },
-  "96714275330d": {
-    "title": "Google open-sources 3D emoji",
-    "date": "2026-07-19"
-  },
-  "1cee09da4104": {
-    "title": "Waymo service interruption",
-    "date": "2026-07-19"
-  },
-  "2122326be8aa": {
-    "title": "AI insurance automation pilots",
-    "date": "2026-07-19"
-  },
-  "22ef4ec6b71b": {
-    "title": "ZA/UM layoffs",
-    "date": "2026-07-19"
-  },
   "1a05ed4caa3c": {
     "title": "Netflix acquires InterPositive",
     "date": "2026-07-20"
@@ -1274,5 +1250,33 @@
   "3ab22072d801": {
     "title": "BGP hijack infecting networks caused by a comedy of errors",
     "date": "2026-09-02"
+  },
+  "1990b3b8df4d": {
+    "title": "OpenAI's Astra Reasoning Model",
+    "date": "2026-09-03"
+  },
+  "24ee9da748f6": {
+    "title": "Palo Alto Networks Acquisition",
+    "date": "2026-09-03"
+  },
+  "2c26a2dacd0b": {
+    "title": "MapQuest App Store Surge",
+    "date": "2026-09-03"
+  },
+  "0a2324534283": {
+    "title": "FCC Robocall Scorecard",
+    "date": "2026-09-03"
+  },
+  "31e3ffe55103": {
+    "title": "NASA Lunar Spacesuit Redesign",
+    "date": "2026-09-03"
+  },
+  "06c675c89422": {
+    "title": "DJI Robot Vacuum Data Privacy",
+    "date": "2026-09-03"
+  },
+  "b9aadcdb7fa1": {
+    "title": "Awol Vision 4K Projector Launch",
+    "date": "2026-09-03"
   }
 }
