@@ -1,32 +1,4 @@
 {
-  "99c60c83b0b0": {
-    "title": "OpenAI internal testing breach",
-    "date": "2026-07-22"
-  },
-  "8ef1526105d8": {
-    "title": "Apple loses Masimo patent case",
-    "date": "2026-07-22"
-  },
-  "d204ddbf9790": {
-    "title": "Glow endpoint security funding",
-    "date": "2026-07-22"
-  },
-  "84e8e1b9b5d4": {
-    "title": "Synthesia AI enterprise coaching",
-    "date": "2026-07-22"
-  },
-  "28f6a3991ce3": {
-    "title": "Substack AI detection tool",
-    "date": "2026-07-22"
-  },
-  "c7ec102f9ff5": {
-    "title": "Vulnerability in dealer-installed car alarms",
-    "date": "2026-07-22"
-  },
-  "c199570b1bb7": {
-    "title": "Xbox leadership departure",
-    "date": "2026-07-22"
-  },
   "43d8c0850e8d": {
     "title": "OpenAI Security Incident",
     "date": "2026-07-23"
@@ -1282,5 +1254,37 @@
   "7fd21696411c": {
     "title": "ASCII smuggling spam trend",
     "date": "2026-09-05"
+  },
+  "37b9bb93c0cd": {
+    "title": "OpenAI and Microsoft Sued by News Outlets",
+    "date": "2026-09-06"
+  },
+  "4a53e9e138c3": {
+    "title": "OpenAI Internal Agent Incidents",
+    "date": "2026-09-06"
+  },
+  "8a9ce217112a": {
+    "title": "Acer Launches Blackwell-Based Workstation",
+    "date": "2026-09-06"
+  },
+  "6fa92d464fdd": {
+    "title": "Apple iPhone Roadmap Leaks",
+    "date": "2026-09-06"
+  },
+  "66223a4536bc": {
+    "title": "Tesla Cybercab Safety Investigation",
+    "date": "2026-09-06"
+  },
+  "6bc9e984b917": {
+    "title": "Microsoft Implements Windows Age Verification",
+    "date": "2026-09-06"
+  },
+  "71a43d5a1bfe": {
+    "title": "Gamescom Security Update",
+    "date": "2026-09-06"
+  },
+  "5cb0ae707ddc": {
+    "title": "Cyborg Cockroach Research",
+    "date": "2026-09-06"
   }
 }
