@@ -1,32 +1,4 @@
 {
-  "43d8c0850e8d": {
-    "title": "OpenAI Security Incident",
-    "date": "2026-07-23"
-  },
-  "4ace063b9b80": {
-    "title": "Google Antitrust Fine",
-    "date": "2026-07-23"
-  },
-  "9ab169f3c054": {
-    "title": "Apple Masimo Legal Settlement",
-    "date": "2026-07-23"
-  },
-  "d637707b85ea": {
-    "title": "LG Smart TV Privacy",
-    "date": "2026-07-23"
-  },
-  "a1061f0a7c56": {
-    "title": "Google Cloud Earnings",
-    "date": "2026-07-23"
-  },
-  "cec1a214988f": {
-    "title": "IBM Mainframe Sales",
-    "date": "2026-07-23"
-  },
-  "c71d71517413": {
-    "title": "Tesla Quarterly Earnings",
-    "date": "2026-07-23"
-  },
   "2c183446c781": {
     "title": "Microsoft 365 outage",
     "date": "2026-07-24"
@@ -1286,5 +1258,29 @@
   "5cb0ae707ddc": {
     "title": "Cyborg Cockroach Research",
     "date": "2026-09-06"
+  },
+  "61d898140c27": {
+    "title": "Isar Aerospace successfully launches first commercial orbital rocket",
+    "date": "2026-09-07"
+  },
+  "f655be02bfb5": {
+    "title": "Acer unveils RTX Spark AI workstation",
+    "date": "2026-09-07"
+  },
+  "7c4bf2c5dbcf": {
+    "title": "LG smart TVs logging audio with screen off",
+    "date": "2026-09-07"
+  },
+  "7adc3edd24bd": {
+    "title": "Global timekeepers consider swapping leap second for leap hour",
+    "date": "2026-09-07"
+  },
+  "916ac226edae": {
+    "title": "Amazon cargo plane crash at Miami International Airport",
+    "date": "2026-09-07"
+  },
+  "2a440f629013": {
+    "title": "Study finds smartwatch calorie tracking inaccurate",
+    "date": "2026-09-07"
   }
 }
