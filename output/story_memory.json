@@ -1,36 +1,4 @@
 {
-  "2c183446c781": {
-    "title": "Microsoft 365 outage",
-    "date": "2026-07-24"
-  },
-  "687bbd190799": {
-    "title": "AMD launches rack-scale AI system",
-    "date": "2026-07-24"
-  },
-  "f787be4f1e4d": {
-    "title": "Anthropic expands voice mode",
-    "date": "2026-07-24"
-  },
-  "6ce23301db74": {
-    "title": "Windmill server vulnerability",
-    "date": "2026-07-24"
-  },
-  "384e3c53e98e": {
-    "title": "Patreon layoffs",
-    "date": "2026-07-24"
-  },
-  "44a34c34385e": {
-    "title": "Google selfie authentication",
-    "date": "2026-07-24"
-  },
-  "f4a29231b1dd": {
-    "title": "Tesla safety rules",
-    "date": "2026-07-24"
-  },
-  "eea3abae588c": {
-    "title": "European research data access",
-    "date": "2026-07-24"
-  },
   "df097d52cf4e": {
     "title": "AMD EPYC Roadmap Update",
     "date": "2026-07-25"
@@ -1282,5 +1250,29 @@
   "2a440f629013": {
     "title": "Study finds smartwatch calorie tracking inaccurate",
     "date": "2026-09-07"
+  },
+  "328c2ba87d2b": {
+    "title": "Huawei Mate XT 2 Trifold Smartphone",
+    "date": "2026-09-08"
+  },
+  "989f240be2f1": {
+    "title": "Apple Foldable iPhone Launch",
+    "date": "2026-09-08"
+  },
+  "2285f25d3f96": {
+    "title": "NavigateAI Startup Launch",
+    "date": "2026-09-08"
+  },
+  "3443d361d5bc": {
+    "title": "220 Million Records Exposed in APIS Leak",
+    "date": "2026-09-08"
+  },
+  "af333a8fd5be": {
+    "title": "LG Smart TV Data Collection",
+    "date": "2026-09-08"
+  },
+  "46dcdb375eca": {
+    "title": "ASML New Photomask Technology",
+    "date": "2026-09-08"
   }
 }
