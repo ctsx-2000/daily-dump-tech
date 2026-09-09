@@ -1,32 +1,4 @@
 {
-  "df097d52cf4e": {
-    "title": "AMD EPYC Roadmap Update",
-    "date": "2026-07-25"
-  },
-  "f449ff2b843d": {
-    "title": "Qualcomm Price Hike",
-    "date": "2026-07-25"
-  },
-  "30a988a84172": {
-    "title": "Roku Hardware Price Increase",
-    "date": "2026-07-25"
-  },
-  "f9dc280952a3": {
-    "title": "OpenAI AI Keypad",
-    "date": "2026-07-25"
-  },
-  "334e29230f9f": {
-    "title": "Prentis Startup Funding",
-    "date": "2026-07-25"
-  },
-  "d9a1b1c52201": {
-    "title": "Midjourney Acquires Co-Star",
-    "date": "2026-07-25"
-  },
-  "eaf7d52959c8": {
-    "title": "Waymo and Uber Contract",
-    "date": "2026-07-25"
-  },
   "deaa4ed3864c": {
     "title": "Warner Bros. sues Amazon over executive poaching",
     "date": "2026-07-26"
@@ -1274,5 +1246,33 @@
   "46dcdb375eca": {
     "title": "ASML New Photomask Technology",
     "date": "2026-09-08"
+  },
+  "737ad03a4ff8": {
+    "title": "OpenAI solves Navier-Stokes problem",
+    "date": "2026-09-09"
+  },
+  "8319b4922b84": {
+    "title": "Suno pivots to licensed training data",
+    "date": "2026-09-09"
+  },
+  "ef670ba5c5ee": {
+    "title": "Anthropic warns of token theft",
+    "date": "2026-09-09"
+  },
+  "9e1a5e46a017": {
+    "title": "F5 BIG-IP vulnerability discovery",
+    "date": "2026-09-09"
+  },
+  "36b2010f09d4": {
+    "title": "The Exploration Company closes 450 million dollar round",
+    "date": "2026-09-09"
+  },
+  "696ea3c05dc3": {
+    "title": "CloudNC raises 20 million for manufacturing automation",
+    "date": "2026-09-09"
+  },
+  "ab53b8696d80": {
+    "title": "LG TVs scanning for third-party devices",
+    "date": "2026-09-09"
   }
 }
