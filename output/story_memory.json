@@ -1,36 +1,4 @@
 {
-  "7c2ed6eb6d88": {
-    "title": "Claude shared chat security vulnerability",
-    "date": "2026-07-28"
-  },
-  "c05c7149b1f4": {
-    "title": "Microsoft launches agentic cybersecurity platform",
-    "date": "2026-07-28"
-  },
-  "e87bdec81891": {
-    "title": "Anthropic and OpenAI IPO impact on nonprofits",
-    "date": "2026-07-28"
-  },
-  "7e87fa626e4d": {
-    "title": "Fifth Circuit blocks Texas social media filtering law",
-    "date": "2026-07-28"
-  },
-  "eb6e1367d9bc": {
-    "title": "New York Times copyright litigation against OpenAI and Microsoft",
-    "date": "2026-07-28"
-  },
-  "aafebc98dac8": {
-    "title": "India expansion for Cursor",
-    "date": "2026-07-28"
-  },
-  "31745d0ac9d5": {
-    "title": "Thea Energy fusion research grant",
-    "date": "2026-07-28"
-  },
-  "ab9d09ad43e1": {
-    "title": "X Money payment platform launch",
-    "date": "2026-07-28"
-  },
   "612697baa551": {
     "title": "Hundreds of Claude AI chats publicly accessible",
     "date": "2026-07-29"
@@ -1274,5 +1242,29 @@
   "b3abdf37e53a": {
     "title": "Amazon Fire TV Stick 4K discounted to sixteen dollars",
     "date": "2026-09-11"
+  },
+  "99ed5df51a37": {
+    "title": "OpenAI agents discovered attacking RubyGems",
+    "date": "2026-09-12"
+  },
+  "430772ab65d7": {
+    "title": "Anthropic Claude misused to scrape Android app secrets",
+    "date": "2026-09-12"
+  },
+  "db900a0fd668": {
+    "title": "Roblox announces offline and web-based gaming modes",
+    "date": "2026-09-12"
+  },
+  "c5c64e714a99": {
+    "title": "New Mexico lawyer fined for AI-hallucinated witnesses",
+    "date": "2026-09-12"
+  },
+  "4140fbe329da": {
+    "title": "Khosla Ventures expands to New York",
+    "date": "2026-09-12"
+  },
+  "ac400a5c67e8": {
+    "title": "iPhone eighteen Pro pre-orders begin this Saturday",
+    "date": "2026-09-12"
   }
 }
