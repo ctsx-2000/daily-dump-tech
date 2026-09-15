@@ -1,32 +1,4 @@
 {
-  "ca6a22006fa6": {
-    "title": "Anthropic reports internal security breaches",
-    "date": "2026-07-31"
-  },
-  "0e49bd374c1a": {
-    "title": "Google introduces new Chrome security architecture",
-    "date": "2026-07-31"
-  },
-  "587d785bf269": {
-    "title": "CareCloud discloses major health data breach",
-    "date": "2026-07-31"
-  },
-  "58cf81af3d47": {
-    "title": "LinkedIn adds AI content flagging",
-    "date": "2026-07-31"
-  },
-  "1f9b479aa540": {
-    "title": "Federal judge rules against Anthropic supply chain risk label",
-    "date": "2026-07-31"
-  },
-  "56d18a5f618e": {
-    "title": "Quantum computing benchmark milestone",
-    "date": "2026-07-31"
-  },
-  "357f435b3593": {
-    "title": "Mythos exploit disables PQC algorithm candidate",
-    "date": "2026-07-31"
-  },
   "11be963ea1a0": {
     "title": "Google Earth's AI deepfake tool",
     "date": "2026-08-01"
@@ -1254,5 +1226,33 @@
   "0fd61733ddce": {
     "title": "Music industry adopts new anti-fraud measures",
     "date": "2026-09-14"
+  },
+  "8ceaa2812fb5": {
+    "title": "OpenAI Acquires Glass Imaging",
+    "date": "2026-09-15"
+  },
+  "aa32a0cacf1b": {
+    "title": "Apple Integrates Third Party AI",
+    "date": "2026-09-15"
+  },
+  "f6a2f288b22d": {
+    "title": "Nvidia CEO Comments on AI Development Pace",
+    "date": "2026-09-15"
+  },
+  "b4378ca309f0": {
+    "title": "Cornelis Raises Funding for Network Infrastructure",
+    "date": "2026-09-15"
+  },
+  "048d89bfb13a": {
+    "title": "Exein Secures Funding for Physical AI",
+    "date": "2026-09-15"
+  },
+  "38821e3b381f": {
+    "title": "US Military Deploys On Orbit Weapons",
+    "date": "2026-09-15"
+  },
+  "d683d7584eb2": {
+    "title": "Mozilla Report on Open AI Model Capability",
+    "date": "2026-09-15"
   }
 }
