@@ -1,36 +1,4 @@
 {
-  "a4bfee6310a1": {
-    "title": "Google Earth AI feature pause",
-    "date": "2026-08-02"
-  },
-  "36b055c8a14f": {
-    "title": "Apple Siri compute subscription",
-    "date": "2026-08-02"
-  },
-  "c27ec9d04931": {
-    "title": "Pixel 11 and Watch 5 leaks",
-    "date": "2026-08-02"
-  },
-  "22c2d5dd8566": {
-    "title": "Ubisoft sunsets NFT game",
-    "date": "2026-08-02"
-  },
-  "74ed7319e3c9": {
-    "title": "Reddit AI licensing dispute",
-    "date": "2026-08-02"
-  },
-  "d09cc31113b9": {
-    "title": "Minnesota nudify app ban",
-    "date": "2026-08-02"
-  },
-  "f056983c4826": {
-    "title": "Iranian cyberattacks on water systems",
-    "date": "2026-08-02"
-  },
-  "f01386dab5e9": {
-    "title": "Billboard Hot 100 AI concerns",
-    "date": "2026-08-02"
-  },
   "333b308d7d58": {
     "title": "Hotel Wi-Fi phishing attack targets Microsoft logins",
     "date": "2026-08-03"
@@ -1254,5 +1222,37 @@
   "ad852aa737a7": {
     "title": "The Nancy Grace Roman Space Telescope Refueling\n\nIt's September 16, 2026. This is your Daily Dump of tech news.\n\nGoogle has released Gemini three-point-eight Live and Gemini three-point-eight Live Extended Thinking. The update introduces a new reasoning capability designed to handle multi-step problem solving, aimed at reducing logic errors in complex tasks.\n\n[[PAUSE]]\n\nOn the business automation front, Meta has launched a new WhatsApp Business server that allows developers to integrate AI coding agents directly into the setup process. This enables agents like Claude, Cursor, and ChatGPT to manage messaging templates, perform testing, and handle troubleshooting for business accounts.\n\n[[PAUSE]]\n\nPublic opinion regarding AI infrastructure remains negative according to new polling data from the New York Times and Siena University. Sixty-one percent of respondents oppose the construction of new data centers intended to power artificial intelligence operations, reflecting broader resistance to the industry's physical expansion.\n\n[[PAUSE]]\n\nMoving to the semiconductor sector, SK Hynix is reportedly in discussions with Intel regarding a potential collaboration to manufacture memory chips within the United States. While the companies have not finalized any specific agreements, the talks signal a possible shift in domestic production capacity for advanced memory components.\n\n[[PAUSE]]\n\nIn security, a hacker collective has compromised a Flock safety camera, exposing thousands of internal files and logs. The leaked data reveals that the system captured one-point-six million images of fifty-thousand vehicles over a twenty-one-day period, highlighting the extensive surveillance capabilities of these devices.\n\n[[PAUSE]]\n\nFinally, NASA has confirmed that the Nancy Grace Roman Space Telescope is equipped with enough fuel for twenty-two years of operation. The observatory is the first of its kind designed for in-space refueling, which doubles the original mission length expectations.\n\nAnd that's all for today. Tune in tomorrow for another Daily Dump.",
     "date": "2026-09-16"
+  },
+  "cee8f9b24a3d": {
+    "title": "Google Gemini 3.8 expansion",
+    "date": "2026-09-17"
+  },
+  "874a0770d30c": {
+    "title": "NVIDIA RTX 5090 shortage",
+    "date": "2026-09-17"
+  },
+  "82dcd199bb09": {
+    "title": "Googlebook event",
+    "date": "2026-09-17"
+  },
+  "f99c807fddcb": {
+    "title": "Snap smart glasses update",
+    "date": "2026-09-17"
+  },
+  "7405b4655ea9": {
+    "title": "WhatsApp account expansion",
+    "date": "2026-09-17"
+  },
+  "245d756b4c6b": {
+    "title": "Comp AI funding",
+    "date": "2026-09-17"
+  },
+  "d6cf35fa6665": {
+    "title": "California net neutrality policy",
+    "date": "2026-09-17"
+  },
+  "5c92b1f81eb4": {
+    "title": "Meteor tracking group cyberattack",
+    "date": "2026-09-17"
   }
 }
