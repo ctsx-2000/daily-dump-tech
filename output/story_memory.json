@@ -1,32 +1,4 @@
 {
-  "faafeb4e989f": {
-    "title": "Linux 7.2-rc6 Released",
-    "date": "2026-08-04"
-  },
-  "218bb89ed52b": {
-    "title": "Europe\u2019s AI transparency rules take effect",
-    "date": "2026-08-04"
-  },
-  "40191dcfacd3": {
-    "title": "Palantir CEO comments on AI industry",
-    "date": "2026-08-04"
-  },
-  "073450d15662": {
-    "title": "Apple challenges UK iCloud backdoor demand",
-    "date": "2026-08-04"
-  },
-  "7a22741b2dad": {
-    "title": "AI-supervised exam failure",
-    "date": "2026-08-04"
-  },
-  "3c16b0261270": {
-    "title": "SpaceX land acquisition",
-    "date": "2026-08-04"
-  },
-  "5474c9949af2": {
-    "title": "Ati Robotics supply chain strategy",
-    "date": "2026-08-04"
-  },
   "4477ba09a68a": {
     "title": "SpaceX earnings and business model shift",
     "date": "2026-08-05"
@@ -1258,5 +1230,33 @@
   "81586410f759": {
     "title": "New Android Malware RatHat",
     "date": "2026-09-18"
+  },
+  "748b666907f4": {
+    "title": "The FCC waives foreign ownership rules for Paramount",
+    "date": "2026-09-19"
+  },
+  "78149b5c751b": {
+    "title": "Snap opens pre-orders for standalone AR glasses",
+    "date": "2026-09-19"
+  },
+  "f3d7a5b7f549": {
+    "title": "California governor pushes for AI kill switch",
+    "date": "2026-09-19"
+  },
+  "a72dd4d07e64": {
+    "title": "Disney appoints first chief technology officer",
+    "date": "2026-09-19"
+  },
+  "6d5d9ca9e93a": {
+    "title": "OpenAI and Anthropic enterprise adoption rates",
+    "date": "2026-09-19"
+  },
+  "02344f331c8f": {
+    "title": "US government website used malicious Chinese AI tool",
+    "date": "2026-09-19"
+  },
+  "2fa0c0bfde82": {
+    "title": "Security vulnerabilities tied to AI chatbot usage",
+    "date": "2026-09-19"
   }
 }
