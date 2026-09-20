@@ -1,24 +1,4 @@
 {
-  "4477ba09a68a": {
-    "title": "SpaceX earnings and business model shift",
-    "date": "2026-08-05"
-  },
-  "0fcafbb93f22": {
-    "title": "Apple and Windows clipboard interoperability",
-    "date": "2026-08-05"
-  },
-  "be3598f7e75a": {
-    "title": "Signal cross-device phone linking",
-    "date": "2026-08-05"
-  },
-  "8c43a3df5845": {
-    "title": "SaferAI report on open-weight model risks",
-    "date": "2026-08-05"
-  },
-  "4186b290e2ca": {
-    "title": "Lucid Motors turnaround strategy",
-    "date": "2026-08-05"
-  },
   "3ae5a1b1d3ea": {
     "title": "Google AI Leadership Shakeup",
     "date": "2026-08-06"
@@ -1258,5 +1238,29 @@
   "2fa0c0bfde82": {
     "title": "Security vulnerabilities tied to AI chatbot usage",
     "date": "2026-09-19"
+  },
+  "9216aa064440": {
+    "title": "The FCC bans foreign-made routers",
+    "date": "2026-09-20"
+  },
+  "21c9877019c8": {
+    "title": "Google threat intelligence group infiltrates supply-chain hackers",
+    "date": "2026-09-20"
+  },
+  "ed75640bf081": {
+    "title": "Trump administration bans journalists from White House",
+    "date": "2026-09-20"
+  },
+  "76780ad8c927": {
+    "title": "Valve updates SteamOS with hardware performance fixes",
+    "date": "2026-09-20"
+  },
+  "ebc89961ee7d": {
+    "title": "Petlibro launches AI-powered smart feeder",
+    "date": "2026-09-20"
+  },
+  "521fa3ec4122": {
+    "title": "Vals AI launches benchmarking platform",
+    "date": "2026-09-20"
   }
 }
