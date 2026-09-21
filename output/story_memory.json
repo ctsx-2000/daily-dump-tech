@@ -1,32 +1,4 @@
 {
-  "3ae5a1b1d3ea": {
-    "title": "Google AI Leadership Shakeup",
-    "date": "2026-08-06"
-  },
-  "242281d26a32": {
-    "title": "Anthropic and OpenAI Security Breach",
-    "date": "2026-08-06"
-  },
-  "6e4b87965e06": {
-    "title": "DOJ Oversight of OpenAI",
-    "date": "2026-08-06"
-  },
-  "8bc3399b0f75": {
-    "title": "Meta Muse Code Launch",
-    "date": "2026-08-06"
-  },
-  "6135de05e654": {
-    "title": "Motherboard Controller Vulnerabilities",
-    "date": "2026-08-06"
-  },
-  "edfda6b76b2e": {
-    "title": "OnePlus North American Exit",
-    "date": "2026-08-06"
-  },
-  "d820e5149b4a": {
-    "title": "Windows 11 Improvements",
-    "date": "2026-08-06"
-  },
   "89e6fce463c8": {
     "title": "Defense tech Hadrian raises one point three seven billion dollars",
     "date": "2026-08-07"
@@ -1262,5 +1234,37 @@
   "521fa3ec4122": {
     "title": "Vals AI launches benchmarking platform",
     "date": "2026-09-20"
+  },
+  "eadb8c485268": {
+    "title": "Samsung to double high bandwidth memory output",
+    "date": "2026-09-21"
+  },
+  "e9ca11146905": {
+    "title": "OpenAI and Codex sandbox vulnerabilities",
+    "date": "2026-09-21"
+  },
+  "b80eeac45d1f": {
+    "title": "Google launches agentic orchestrator tool",
+    "date": "2026-09-21"
+  },
+  "dc6e5ae065f1": {
+    "title": "FBI updates CJIS security policy",
+    "date": "2026-09-21"
+  },
+  "55394dd5e88b": {
+    "title": "Malicious npm packages bypass install script defenses",
+    "date": "2026-09-21"
+  },
+  "9fb1aac60c75": {
+    "title": "Vivo releases X500 Pro Max with advanced camera hardware",
+    "date": "2026-09-21"
+  },
+  "60e0a46c92db": {
+    "title": "Apple releases high-end M5 Ultra Mac Studio",
+    "date": "2026-09-21"
+  },
+  "c261b8078886": {
+    "title": "The Boring Company proposes Texas Hyperloop",
+    "date": "2026-09-21"
   }
 }
