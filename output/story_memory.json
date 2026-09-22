@@ -1,32 +1,4 @@
 {
-  "89e6fce463c8": {
-    "title": "Defense tech Hadrian raises one point three seven billion dollars",
-    "date": "2026-08-07"
-  },
-  "c526999a7b22": {
-    "title": "Anthropic to design internal hardware for Claude",
-    "date": "2026-08-07"
-  },
-  "b3a8e7c585bf": {
-    "title": "Google security researchers report targeted attacks on financial firms",
-    "date": "2026-08-07"
-  },
-  "e1739b5fae7d": {
-    "title": "China linked LightSpy spyware identified in thirteen countries",
-    "date": "2026-08-07"
-  },
-  "073d03fe8c90": {
-    "title": "Suno announces new watermarking and download limits for AI music",
-    "date": "2026-08-07"
-  },
-  "1b40d94678c6": {
-    "title": "FCC votes to end national broadcast ownership caps",
-    "date": "2026-08-07"
-  },
-  "50ad8055fc91": {
-    "title": "Congressional representative Ro Khanna proposes Data Center Bill of Rights",
-    "date": "2026-08-07"
-  },
   "9f60b68ecc4a": {
     "title": "Google Pixel 11 Launch Event",
     "date": "2026-08-08"
@@ -1266,5 +1238,29 @@
   "c261b8078886": {
     "title": "The Boring Company proposes Texas Hyperloop",
     "date": "2026-09-21"
+  },
+  "cd752ed83128": {
+    "title": "Adobe Premiere for Android",
+    "date": "2026-09-22"
+  },
+  "ba831482c000": {
+    "title": "Oppo Find X10 Pro Max",
+    "date": "2026-09-22"
+  },
+  "cf045878d8f7": {
+    "title": "Nexstrom 2D Semiconductors",
+    "date": "2026-09-22"
+  },
+  "d6334151f3e4": {
+    "title": "Meta Muse Security Vulnerability",
+    "date": "2026-09-22"
+  },
+  "6e9c3cc11021": {
+    "title": "FAA Flight Disruptions",
+    "date": "2026-09-22"
+  },
+  "eb5675f63535": {
+    "title": "Dave Plummer Task Manager Port",
+    "date": "2026-09-22"
   }
 }
