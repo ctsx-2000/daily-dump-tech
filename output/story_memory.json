@@ -1,32 +1,4 @@
 {
-  "58b9c2859547": {
-    "title": "Google Gemini hits one billion users",
-    "date": "2026-08-12"
-  },
-  "650e7fa4ac2d": {
-    "title": "Microsoft Xbox Elite Series 3 prototype leaks",
-    "date": "2026-08-12"
-  },
-  "5f72677f522f": {
-    "title": "Chrome introduces device-bound session credentials",
-    "date": "2026-08-12"
-  },
-  "c4005bedd915": {
-    "title": "Zoom patching meeting hijacking vulnerability",
-    "date": "2026-08-12"
-  },
-  "a6c122bb5e55": {
-    "title": "Yulu raises 93 million dollars for electric fleet expansion",
-    "date": "2026-08-12"
-  },
-  "b3e21baee8f6": {
-    "title": "Apple extends 2026 back-to-school promotion",
-    "date": "2026-08-12"
-  },
-  "e8a2056918d9": {
-    "title": "Google TV Freeplay adds video-on-demand",
-    "date": "2026-08-12"
-  },
   "45d50008b198": {
     "title": "Google Pixel 11 series release",
     "date": "2026-08-13"
@@ -1238,5 +1210,37 @@
   "ca87b98cb1bb": {
     "title": "Paramount and Warner Brothers Discovery merger faces antitrust scrutiny",
     "date": "2026-09-26"
+  },
+  "9703f276f2c8": {
+    "title": "Google ads scareware",
+    "date": "2026-09-27"
+  },
+  "d164f15ca327": {
+    "title": "Microsoft Excel array update",
+    "date": "2026-09-27"
+  },
+  "d2ae54dac7a7": {
+    "title": "PNOE metabolic mask launch",
+    "date": "2026-09-27"
+  },
+  "ffc23205930a": {
+    "title": "Healthcare AI cost surge",
+    "date": "2026-09-27"
+  },
+  "1742cf6773cf": {
+    "title": "Tesla Optimus labor conflict",
+    "date": "2026-09-27"
+  },
+  "55d327dc61a4": {
+    "title": "Final Fantasy XIV modding community ban",
+    "date": "2026-09-27"
+  },
+  "fbae14db46a4": {
+    "title": "Paramount WBD merger scrutiny",
+    "date": "2026-09-27"
+  },
+  "bf85628f757d": {
+    "title": "Pancreatic cell diabetes treatment",
+    "date": "2026-09-27"
   }
 }
