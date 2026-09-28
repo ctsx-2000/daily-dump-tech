@@ -1,36 +1,4 @@
 {
-  "45d50008b198": {
-    "title": "Google Pixel 11 series release",
-    "date": "2026-08-13"
-  },
-  "93a0f10acc1b": {
-    "title": "Twitch AI training opt-out",
-    "date": "2026-08-13"
-  },
-  "8ef6317a67fd": {
-    "title": "Chrome device-bound session credentials",
-    "date": "2026-08-13"
-  },
-  "3e16e54a439c": {
-    "title": "Massive supply-chain credential leak",
-    "date": "2026-08-13"
-  },
-  "b474a1ca5b9d": {
-    "title": "Cognition AI valuation talks",
-    "date": "2026-08-13"
-  },
-  "a1de4c2096fc": {
-    "title": "Northrop Grumman satellite servicing",
-    "date": "2026-08-13"
-  },
-  "168ce19a48ad": {
-    "title": "Grubhub FTC settlement payouts",
-    "date": "2026-08-13"
-  },
-  "899864f0fb46": {
-    "title": "Meta AI glasses donation",
-    "date": "2026-08-13"
-  },
   "ac433b9c1ecb": {
     "title": "Apple and Epic Games court order regarding App Store fees",
     "date": "2026-08-14"
@@ -1242,5 +1210,33 @@
   "bf85628f757d": {
     "title": "Pancreatic cell diabetes treatment",
     "date": "2026-09-27"
+  },
+  "017eaf9858c1": {
+    "title": "Meta launches enterprise AI platform",
+    "date": "2026-09-28"
+  },
+  "5cbea062c1e2": {
+    "title": "OpenAI misaligned reports",
+    "date": "2026-09-28"
+  },
+  "a0b364b897d9": {
+    "title": "Google shifts Gemini strategy",
+    "date": "2026-09-28"
+  },
+  "6d7258f6073e": {
+    "title": "SiMa.ai hits one point four five billion valuation",
+    "date": "2026-09-28"
+  },
+  "d719bd7f6d6c": {
+    "title": "DetectifAI startup launch",
+    "date": "2026-09-28"
+  },
+  "b635c6fc4b95": {
+    "title": "Walmart digital shelf pricing",
+    "date": "2026-09-28"
+  },
+  "1f635a3bdc40": {
+    "title": "Volkswagen electric vehicle strategy",
+    "date": "2026-09-28"
   }
 }
