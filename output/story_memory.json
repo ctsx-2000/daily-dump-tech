@@ -1,32 +1,4 @@
 {
-  "ac433b9c1ecb": {
-    "title": "Apple and Epic Games court order regarding App Store fees",
-    "date": "2026-08-14"
-  },
-  "6cf824576407": {
-    "title": "Google ordered to open Android to rival app stores",
-    "date": "2026-08-14"
-  },
-  "d275a7f922fd": {
-    "title": "Apple and Alibaba collaborate on China-specific AI",
-    "date": "2026-08-14"
-  },
-  "e33b3e24e3a4": {
-    "title": "Anthropic researchers find AI agents in conflict",
-    "date": "2026-08-14"
-  },
-  "fc333b2368e9": {
-    "title": "Writer releases new AI model to reduce token costs",
-    "date": "2026-08-14"
-  },
-  "c914e37c6046": {
-    "title": "Apple updates mercenary spyware notifications",
-    "date": "2026-08-14"
-  },
-  "39204cbc14d9": {
-    "title": "Netflix shuts down two internal game studios",
-    "date": "2026-08-14"
-  },
   "dd56ae94bb0e": {
     "title": "Vulnerability in macOS screen sharing",
     "date": "2026-08-15"
@@ -1238,5 +1210,33 @@
   "1f635a3bdc40": {
     "title": "Volkswagen electric vehicle strategy",
     "date": "2026-09-28"
+  },
+  "e1b6a64ab9f1": {
+    "title": "Meta AI data privacy breach",
+    "date": "2026-09-29"
+  },
+  "13b3536e503b": {
+    "title": "Anthropic IPO risk disclosure",
+    "date": "2026-09-29"
+  },
+  "26eaee51e412": {
+    "title": "OpenAI state legal challenge",
+    "date": "2026-09-29"
+  },
+  "b3ac3e43d9f3": {
+    "title": "Reco AI security funding",
+    "date": "2026-09-29"
+  },
+  "19ee30a89b33": {
+    "title": "Firefox UI overhaul",
+    "date": "2026-09-29"
+  },
+  "280a8dbc540f": {
+    "title": "Fairphone earbuds release date",
+    "date": "2026-09-29"
+  },
+  "fcef994af91c": {
+    "title": "Nothing Headphone One Pro launch",
+    "date": "2026-09-29"
   }
 }
