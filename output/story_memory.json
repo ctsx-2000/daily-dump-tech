@@ -1,32 +1,4 @@
 {
-  "dd56ae94bb0e": {
-    "title": "Vulnerability in macOS screen sharing",
-    "date": "2026-08-15"
-  },
-  "c1c7a0835cbb": {
-    "title": "OpenAI adds computer memory to ChatGPT",
-    "date": "2026-08-15"
-  },
-  "5b93ca739cc7": {
-    "title": "Meta releases open-weight AI model Glimmer",
-    "date": "2026-08-15"
-  },
-  "58e8a3617d51": {
-    "title": "Google allows removal of AI media watermarks",
-    "date": "2026-08-15"
-  },
-  "43a6acf1e083": {
-    "title": "Self-driving trucks begin California highway testing",
-    "date": "2026-08-15"
-  },
-  "1f7b63fc5591": {
-    "title": "New York City lawmakers propose ban on stadium facial recognition",
-    "date": "2026-08-15"
-  },
-  "991ae5b423d0": {
-    "title": "China-based Unitree G1 robot gains public attention",
-    "date": "2026-08-15"
-  },
   "2581a5adb095": {
     "title": "Critical Vulnerability in macOS Screen Sharing",
     "date": "2026-08-16"
@@ -1238,5 +1210,33 @@
   "fcef994af91c": {
     "title": "Nothing Headphone One Pro launch",
     "date": "2026-09-29"
+  },
+  "137193d2e389": {
+    "title": "AMD acquires World Labs",
+    "date": "2026-09-30"
+  },
+  "79244e3c7ce6": {
+    "title": "OpenAI server hack details",
+    "date": "2026-09-30"
+  },
+  "264fcef14ed6": {
+    "title": "Google pays publishers for AI search",
+    "date": "2026-09-30"
+  },
+  "98386ce83996": {
+    "title": "Meta adds AI creator tools",
+    "date": "2026-09-30"
+  },
+  "d4289776b6c9": {
+    "title": "Cloudflare quantum-safe certificates",
+    "date": "2026-09-30"
+  },
+  "b4f4c0a3f7f8": {
+    "title": "Retatrutide trial results",
+    "date": "2026-09-30"
+  },
+  "0ef0b99572f8": {
+    "title": "Bose launches wired ANC earbuds",
+    "date": "2026-09-30"
   }
 }
