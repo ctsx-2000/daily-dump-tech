@@ -1,32 +1,4 @@
 {
-  "2581a5adb095": {
-    "title": "Critical Vulnerability in macOS Screen Sharing",
-    "date": "2026-08-16"
-  },
-  "3d06e67428eb": {
-    "title": "Anthropic Watermarking Details",
-    "date": "2026-08-16"
-  },
-  "7c36a712f683": {
-    "title": "Android 17 QPR2 Expansion",
-    "date": "2026-08-16"
-  },
-  "fe470801efb9": {
-    "title": "PayPal Sale Negotiations",
-    "date": "2026-08-16"
-  },
-  "8b0a221ccb7c": {
-    "title": "Fusion Startup Funding",
-    "date": "2026-08-16"
-  },
-  "445ffcae84ed": {
-    "title": "US Utility-Scale Solar Growth",
-    "date": "2026-08-16"
-  },
-  "a1f5196f4abc": {
-    "title": "All-Electric Aircraft Flight Test",
-    "date": "2026-08-16"
-  },
   "8483e00485b2": {
     "title": "Stripe will reportedly acquire OpenRouter for seven billion dollars",
     "date": "2026-08-17"
@@ -1238,5 +1210,33 @@
   "0ef0b99572f8": {
     "title": "Bose launches wired ANC earbuds",
     "date": "2026-09-30"
+  },
+  "85ceb99746ee": {
+    "title": "OpenAI launches Dots agent",
+    "date": "2026-10-01"
+  },
+  "ecce704cf160": {
+    "title": "New York City click-to-cancel rule",
+    "date": "2026-10-01"
+  },
+  "4f5f4fbcfe01": {
+    "title": "Samsung Galaxy Tab S12 series",
+    "date": "2026-10-01"
+  },
+  "9f2ad29a6586": {
+    "title": "Amazon Kindle hardware refresh",
+    "date": "2026-10-01"
+  },
+  "7844a6fec656": {
+    "title": "Photon raises 4.5 million for AI agents",
+    "date": "2026-10-01"
+  },
+  "c4d618563e00": {
+    "title": "Legato AI hearing glasses",
+    "date": "2026-10-01"
+  },
+  "1dfa4295dc44": {
+    "title": "Zimbra email vulnerability",
+    "date": "2026-10-01"
   }
 }
