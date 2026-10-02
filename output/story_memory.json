@@ -1,28 +1,4 @@
 {
-  "8483e00485b2": {
-    "title": "Stripe will reportedly acquire OpenRouter for seven billion dollars",
-    "date": "2026-08-17"
-  },
-  "f8cafd82cd11": {
-    "title": "ChatGPT adds Computer History tracking to macOS app",
-    "date": "2026-08-17"
-  },
-  "93b247422644": {
-    "title": "Saber Interactive adds AI disclaimer to Rideshare Simulator Steam page",
-    "date": "2026-08-17"
-  },
-  "206a45ab245d": {
-    "title": "Amazon updates terms of service to enforce arbitration and class action waivers",
-    "date": "2026-08-17"
-  },
-  "5afa01e55107": {
-    "title": "Astronomers observe black hole star using James Webb Space Telescope",
-    "date": "2026-08-17"
-  },
-  "facd0528678a": {
-    "title": "Ukraine strikes Russian rocket factory with cruise missiles",
-    "date": "2026-08-17"
-  },
   "1295ef07766e": {
     "title": "Anthropic revenue growth",
     "date": "2026-08-18"
@@ -1238,5 +1214,33 @@
   "1dfa4295dc44": {
     "title": "Zimbra email vulnerability",
     "date": "2026-10-01"
+  },
+  "d85b85a69e5f": {
+    "title": "Tesla EV Deliveries",
+    "date": "2026-10-02"
+  },
+  "2106fe119841": {
+    "title": "Rivian Sales and Recalls",
+    "date": "2026-10-02"
+  },
+  "182312ebc4bc": {
+    "title": "Robotaxi Regulation",
+    "date": "2026-10-02"
+  },
+  "3161d2eed24d": {
+    "title": "Ataraxos AI for Stratego",
+    "date": "2026-10-02"
+  },
+  "e73cc1262ed9": {
+    "title": "Home Assistant Rebranding",
+    "date": "2026-10-02"
+  },
+  "b6125e14778b": {
+    "title": "Federal Cybersecurity Breaches",
+    "date": "2026-10-02"
+  },
+  "cf3ceaa3d209": {
+    "title": "Memory Market Outlook",
+    "date": "2026-10-02"
   }
 }
