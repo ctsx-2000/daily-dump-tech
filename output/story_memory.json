@@ -1,32 +1,4 @@
 {
-  "7cd4b15c8054": {
-    "title": "LG Display unveils FLiPP OLED technology",
-    "date": "2026-08-20"
-  },
-  "f94ef12a9bb7": {
-    "title": "Meta AI launches dedicated Mac desktop app",
-    "date": "2026-08-20"
-  },
-  "4503dd6ee541": {
-    "title": "Waymo expands Ojai robotaxi service",
-    "date": "2026-08-20"
-  },
-  "2ed50c92edbd": {
-    "title": "SpaceX and Cognition acquisition reports",
-    "date": "2026-08-20"
-  },
-  "ef3842eb8e9b": {
-    "title": "Framework addresses BIOS-related hardware failures",
-    "date": "2026-08-20"
-  },
-  "dd0340fd031f": {
-    "title": "NASA terminates Swift observatory mission",
-    "date": "2026-08-20"
-  },
-  "7f5374d510a7": {
-    "title": "FCC revises broadband speed standards",
-    "date": "2026-08-20"
-  },
   "b3d439803383": {
     "title": "Framework BIOS Update",
     "date": "2026-08-21"
@@ -1230,5 +1202,33 @@
   "2c89c03bd607": {
     "title": "Sonic Racing: CrossWorlds \"Final Content Drop Of Year One\" Arrives This Month - Nintendo Life",
     "date": "2026-10-04"
+  },
+  "4e0802181eec": {
+    "title": "Google Gemini Access Limits",
+    "date": "2026-10-05"
+  },
+  "86d26e23e0d1": {
+    "title": "OpenAI Visual Ads",
+    "date": "2026-10-05"
+  },
+  "8652ac11b98f": {
+    "title": "AI Agent Fleet Tracking",
+    "date": "2026-10-05"
+  },
+  "9abd9a06a9ea": {
+    "title": "HackerRank AI Interviewing",
+    "date": "2026-10-05"
+  },
+  "0fef7bd80745": {
+    "title": "Windows File Explorer Update",
+    "date": "2026-10-05"
+  },
+  "87695bf25f52": {
+    "title": "Jagex Announces RuneScape Four",
+    "date": "2026-10-05"
+  },
+  "59c2601f85ed": {
+    "title": "Nvidia Shield TV Price Hike",
+    "date": "2026-10-05"
   }
 }

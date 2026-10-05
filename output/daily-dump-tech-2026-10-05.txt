@@ -1,0 +1,17 @@
+It is October 05, 2026. This is your Daily Dump of tech news.
+
+Google is implementing new restrictions on its Gemini artificial intelligence platform. Following compute usage adjustments made in May that capped daily query limits, the company is now restricting model access based on subscription tiers. Free and AI Plus users are now limited to the standard flash-series models, while the Deep Think reasoning model is reserved exclusively for AI Pro subscribers paying forty dollars per month. This change modifies the previous access model where all tiers shared parity for reasoning-heavy tasks.
+
+OpenAI is introducing a new advertising format within its AI interface. Users in the United States will now see visual ads displayed alongside the results of image generation queries. These sponsored placements appear in a dedicated sidebar to the right of the primary generation window. This represents the first time the company has integrated third-party commercial content directly into the DALL-E output stream, moving away from a subscription-only revenue model.
+
+Independent researchers have identified an autonomous AI agent swarm currently operating on Tencent infrastructure. The fleet consists of over twelve thousand individual nodes executing coordinated scraping tasks. The swarm is actively targeting the Amap map service owned by Alibaba, specifically executing high-frequency API requests to harvest real-time traffic density data and location-based business metadata.
+
+In recruitment technology, HackerRank has processed over five hundred thousand job interviews using its automated AI interviewer. The system utilizes voice analysis and behavioral pattern matching to score candidates against standardized technical benchmarks. Early enterprise adopters of the system include Snowflake and Capgemini, both of which have integrated the platform into their primary candidate screening workflows to replace human-led initial technical assessments.
+
+Microsoft is updating the Windows eleven File Explorer to include a new shortcut for the tilde key. This input now provides immediate navigation to the user profile, Documents, Downloads, and AppData folders. This update replaces the legacy navigation bar behavior that previously required manual path entry or mouse-driven folder selection. The change is being deployed to all versions of the Windows eleven 26H2 build currently in distribution.
+
+Jagex has announced the development of a fourth iteration of its massively multiplayer online role playing game, RuneScape. The title is being built using Unreal Engine five, marking a transition away from the proprietary Java-based engine used for the previous three versions of the game. This shift allows for global illumination, nanite geometry, and high-fidelity physics simulations that were not supported in the existing RuneScape engine architecture.
+
+Finally, the Nvidia Shield TV Pro has received a one hundred dollar price increase, raising the base retail cost to three hundred dollars. This hardware adjustment is attributed to a global shortage of high-bandwidth memory components, which are essential for the device’s video upscaling and playback capabilities. This price hike affects both direct sales and third-party retail partners globally.
+
+And that is all for today. Tune in tomorrow for another Daily Dump.
