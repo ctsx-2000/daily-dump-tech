@@ -1,36 +1,4 @@
 {
-  "b3d439803383": {
-    "title": "Framework BIOS Update",
-    "date": "2026-08-21"
-  },
-  "39a8d404d64a": {
-    "title": "Cloudflare Spectre Vulnerability",
-    "date": "2026-08-21"
-  },
-  "89e336ae923d": {
-    "title": "Micro1 Revenue Growth",
-    "date": "2026-08-21"
-  },
-  "10cb34709f89": {
-    "title": "ChatGPT Apple Messages Integration",
-    "date": "2026-08-21"
-  },
-  "6ba3c740bfb7": {
-    "title": "Google Discover AI Feed",
-    "date": "2026-08-21"
-  },
-  "4b4fad9a47c4": {
-    "title": "Roblox Regulatory Compliance",
-    "date": "2026-08-21"
-  },
-  "de26757d72ff": {
-    "title": "ClarityCheck Database Exposure",
-    "date": "2026-08-21"
-  },
-  "3ddd67c1613e": {
-    "title": "GitHub Capacity Failures",
-    "date": "2026-08-21"
-  },
   "25ee655131b6": {
     "title": "LinkedIn AI slop button",
     "date": "2026-08-22"
@@ -1230,5 +1198,37 @@
   "59c2601f85ed": {
     "title": "Nvidia Shield TV Price Hike",
     "date": "2026-10-05"
+  },
+  "6673a1e9682d": {
+    "title": "Mistral releases Le Chonk AI model",
+    "date": "2026-10-06"
+  },
+  "e47d9596dd9f": {
+    "title": "Bridge Neurotech launches with ultrasound BCI",
+    "date": "2026-10-06"
+  },
+  "cf62ff0c48a2": {
+    "title": "VMware users moving to alternatives",
+    "date": "2026-10-06"
+  },
+  "6d6e4cf72cf9": {
+    "title": "MCP protocol security vulnerabilities",
+    "date": "2026-10-06"
+  },
+  "dabd9b4bc7a3": {
+    "title": "JetBrains reports first financial loss",
+    "date": "2026-10-06"
+  },
+  "3c5a557831b1": {
+    "title": "Uber expands into catering sector",
+    "date": "2026-10-06"
+  },
+  "f914e69c88a6": {
+    "title": "Nobel Prize in Physiology awarded for optogenetics",
+    "date": "2026-10-06"
+  },
+  "7f2be285cefe": {
+    "title": "Texas city demands fees for police tech records",
+    "date": "2026-10-06"
   }
 }
