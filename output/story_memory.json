@@ -1,32 +1,4 @@
 {
-  "25ee655131b6": {
-    "title": "LinkedIn AI slop button",
-    "date": "2026-08-22"
-  },
-  "caff71906e84": {
-    "title": "Tesla door handle recall",
-    "date": "2026-08-22"
-  },
-  "3d97f02b6830": {
-    "title": "Google publisher traffic controls",
-    "date": "2026-08-22"
-  },
-  "f2ea3bd99024": {
-    "title": "Anthropic model restrictions",
-    "date": "2026-08-22"
-  },
-  "26d1abddb603": {
-    "title": "Rillet unicorn funding",
-    "date": "2026-08-22"
-  },
-  "158a7b5a6939": {
-    "title": "Walmart tap-to-pay rollout",
-    "date": "2026-08-22"
-  },
-  "86999c1849aa": {
-    "title": "Zillow rent inflation lawsuit",
-    "date": "2026-08-22"
-  },
   "f75b2e38e2c7": {
     "title": "Amazon price hikes on hardware",
     "date": "2026-08-23"
@@ -1230,5 +1202,37 @@
   "7f2be285cefe": {
     "title": "Texas city demands fees for police tech records",
     "date": "2026-10-06"
+  },
+  "28cc89283f6f": {
+    "title": "Google releases SynthID Detector",
+    "date": "2026-10-07"
+  },
+  "61c9f9240e9b": {
+    "title": "OpenAI releases Decisions API and math research",
+    "date": "2026-10-07"
+  },
+  "ce2f086917b1": {
+    "title": "Healthleap raises thirty-eight million dollars for AI patient diagnostics",
+    "date": "2026-10-07"
+  },
+  "54bba1f80aa3": {
+    "title": "Parallel Systems secures one hundred million dollars for autonomous rail shipping",
+    "date": "2026-10-07"
+  },
+  "9e7b102bee7a": {
+    "title": "Atlassian security flaw exploited in the wild",
+    "date": "2026-10-07"
+  },
+  "ec051fa7262c": {
+    "title": "SonicWall patches critical gateway vulnerability",
+    "date": "2026-10-07"
+  },
+  "99dc7b19accf": {
+    "title": "Supermassive Games lays off seventy staff",
+    "date": "2026-10-07"
+  },
+  "50c53507931e": {
+    "title": "Apple and LG collaborate on smart home hardware",
+    "date": "2026-10-07"
   }
 }
