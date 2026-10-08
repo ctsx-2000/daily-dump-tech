@@ -1,28 +1,4 @@
 {
-  "f75b2e38e2c7": {
-    "title": "Amazon price hikes on hardware",
-    "date": "2026-08-23"
-  },
-  "81448f8739cc": {
-    "title": "US battery startups receive government funding",
-    "date": "2026-08-23"
-  },
-  "db54eac13ee0": {
-    "title": "AI containment concerns in research labs",
-    "date": "2026-08-23"
-  },
-  "c895dbf35ffe": {
-    "title": "Harvard startup program uses AI avatars",
-    "date": "2026-08-23"
-  },
-  "7c2e7f1680a4": {
-    "title": "Chinese regulators order Tesla safety recall",
-    "date": "2026-08-23"
-  },
-  "59dc027df3c2": {
-    "title": "WiFi router tracking research",
-    "date": "2026-08-23"
-  },
   "b996ec90dd13": {
     "title": "Uber fined by Dutch Data Protection Authority",
     "date": "2026-08-24"
@@ -1234,5 +1210,33 @@
   "50c53507931e": {
     "title": "Apple and LG collaborate on smart home hardware",
     "date": "2026-10-07"
+  },
+  "a8b3039618f0": {
+    "title": "Amazon releases new Alexa Tablet lineup",
+    "date": "2026-10-08"
+  },
+  "082fcb694a14": {
+    "title": "Google introduces offline AI note-taking app",
+    "date": "2026-10-08"
+  },
+  "c3fca7533f60": {
+    "title": "Microsoft launches AI-ready Surface Laptop Ultra",
+    "date": "2026-10-08"
+  },
+  "914669738b35": {
+    "title": "Nvidia expands physical AI for robotics",
+    "date": "2026-10-08"
+  },
+  "cf3dd9d4c720": {
+    "title": "Spotify opens internal tech platform to external developers",
+    "date": "2026-10-08"
+  },
+  "8c8726adf7f9": {
+    "title": "US restricts visa program for major IT firms",
+    "date": "2026-10-08"
+  },
+  "1b96d304c020": {
+    "title": "Atari relaunches 8-bit 800XL computer",
+    "date": "2026-10-08"
   }
 }
