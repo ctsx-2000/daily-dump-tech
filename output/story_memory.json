@@ -1,28 +1,4 @@
 {
-  "b996ec90dd13": {
-    "title": "Uber fined by Dutch Data Protection Authority",
-    "date": "2026-08-24"
-  },
-  "0d8c1ec14e48": {
-    "title": "SK Hynix advances 3D HBM packaging",
-    "date": "2026-08-24"
-  },
-  "0ea39c741f91": {
-    "title": "Amazon raises prices on Echo, Fire TV, and Kindle devices",
-    "date": "2026-08-24"
-  },
-  "dff044a48a4c": {
-    "title": "Apple plans M6 chip update for iMac",
-    "date": "2026-08-24"
-  },
-  "f3c487f08e9b": {
-    "title": "Controversy grows over Flock Safety surveillance tech",
-    "date": "2026-08-24"
-  },
-  "ddbb1a401527": {
-    "title": "Legal debate intensifies over AI training on copyrighted works",
-    "date": "2026-08-24"
-  },
   "7cd38ac33c74": {
     "title": "Zillow and Redfin settle FTC antitrust case",
     "date": "2026-08-25"
@@ -1238,5 +1214,37 @@
   "1b96d304c020": {
     "title": "Atari relaunches 8-bit 800XL computer",
     "date": "2026-10-08"
+  },
+  "a5b6d7de6494": {
+    "title": "Meta bans ByteDance ads",
+    "date": "2026-10-09"
+  },
+  "45dd7e56aa02": {
+    "title": "Google launches offline AI note-taker",
+    "date": "2026-10-09"
+  },
+  "49795c026519": {
+    "title": "Amazon integrates Play Store",
+    "date": "2026-10-09"
+  },
+  "df51a5320324": {
+    "title": "Apple to drive OLED notebook growth",
+    "date": "2026-10-09"
+  },
+  "48a9a1ea1c4a": {
+    "title": "Xona begins commercial GPS beta",
+    "date": "2026-10-09"
+  },
+  "be9755079342": {
+    "title": "Anthropic releases open-source scanner",
+    "date": "2026-10-09"
+  },
+  "128096206232": {
+    "title": "SpaceX targets mobile carrier market",
+    "date": "2026-10-09"
+  },
+  "b01166efd5b9": {
+    "title": "Automattic executive departure",
+    "date": "2026-10-09"
   }
 }
