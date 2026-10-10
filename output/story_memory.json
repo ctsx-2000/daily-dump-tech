@@ -1,36 +1,4 @@
 {
-  "7cd38ac33c74": {
-    "title": "Zillow and Redfin settle FTC antitrust case",
-    "date": "2026-08-25"
-  },
-  "9ff8f83f0f07": {
-    "title": "Apple maintains Hide My Email domain",
-    "date": "2026-08-25"
-  },
-  "98353ff04f04": {
-    "title": "Alabama investigates OpenAI over Hugging Face breach",
-    "date": "2026-08-25"
-  },
-  "8fb8c53de305": {
-    "title": "Oura eyes September IPO",
-    "date": "2026-08-25"
-  },
-  "4d306f9b8e86": {
-    "title": "Google introduces Android motion sickness feature",
-    "date": "2026-08-25"
-  },
-  "1a8f2c28744f": {
-    "title": "Airbound secures thirty-seven million dollars for drone delivery",
-    "date": "2026-08-25"
-  },
-  "7b9843a73991": {
-    "title": "GM vehicles under federal scrutiny",
-    "date": "2026-08-25"
-  },
-  "94443ddfd9c1": {
-    "title": "Data center growth driving gas power expansion",
-    "date": "2026-08-25"
-  },
   "ddb55c2df5bf": {
     "title": "Motorola\u2019s 2027 flagships will support GrapheneOS",
     "date": "2026-08-26"
@@ -1246,5 +1214,33 @@
   "b01166efd5b9": {
     "title": "Automattic executive departure",
     "date": "2026-10-09"
+  },
+  "dc1159a8d210": {
+    "title": "TypeSafe launches Jev AI model",
+    "date": "2026-10-10"
+  },
+  "fe692f3e69b4": {
+    "title": "Anthropic AI submits false police tip",
+    "date": "2026-10-10"
+  },
+  "8b6101fb946c": {
+    "title": "New DarkSword spyware variant hits iPhones",
+    "date": "2026-10-10"
+  },
+  "fee7836a0781": {
+    "title": "Microsoft 365 adds shared AI benefits",
+    "date": "2026-10-10"
+  },
+  "3d83788339cc": {
+    "title": "SpaceX reports Starlink orbital near-misses",
+    "date": "2026-10-10"
+  },
+  "73e87acd8d13": {
+    "title": "Intel and AMD revive DDR4 memory support",
+    "date": "2026-10-10"
+  },
+  "3cda84e18e0d": {
+    "title": "Web-based game decompilation projects emerge",
+    "date": "2026-10-10"
   }
 }
