@@ -1,28 +1,4 @@
 {
-  "5df6964a2b0e": {
-    "title": "Rockstar Games releases extended look at Grand Theft Auto Six",
-    "date": "2026-08-29"
-  },
-  "b0c1c8b00ee5": {
-    "title": "Neocloud Lambda secures one billion dollars in debt for AI infrastructure",
-    "date": "2026-08-29"
-  },
-  "931f49864673": {
-    "title": "Brave Browser adds native email alias support",
-    "date": "2026-08-29"
-  },
-  "19d1ff69dd8d": {
-    "title": "Court rules Kalshi prediction markets are gambling",
-    "date": "2026-08-29"
-  },
-  "27ce1cae6766": {
-    "title": "Chinese automakers expand into humanoid robotics",
-    "date": "2026-08-29"
-  },
-  "d08113ed3caa": {
-    "title": "Steve Jobs science project auctions for over thirty-four thousand dollars",
-    "date": "2026-08-29"
-  },
   "70205b05632f": {
     "title": "Android 17 adds OS-wide ECH",
     "date": "2026-08-30"
@@ -1206,5 +1182,33 @@
   "73990f55dabb": {
     "title": "Rust Borrow Checker Vulnerability",
     "date": "2026-10-13"
+  },
+  "be41d8597f0d": {
+    "title": "NVIDIA Unveils Preset C DLSS Frame Generation",
+    "date": "2026-10-14"
+  },
+  "dd2e3099b371": {
+    "title": "FBI arrests OpenAI employee",
+    "date": "2026-10-14"
+  },
+  "ca21deea91ac": {
+    "title": "Scimplify raises 25 million",
+    "date": "2026-10-14"
+  },
+  "5ea961d58137": {
+    "title": "Anthropic warns of small AI model replication",
+    "date": "2026-10-14"
+  },
+  "3b82bd8afc1b": {
+    "title": "Shopify opens catalog to more AI agents",
+    "date": "2026-10-14"
+  },
+  "1a684612439e": {
+    "title": "Science Corporation implants vision-restoring chip",
+    "date": "2026-10-14"
+  },
+  "753c65394a69": {
+    "title": "Justice Department says North Koreans have infiltrated dozens of US companies",
+    "date": "2026-10-14"
   }
 }
