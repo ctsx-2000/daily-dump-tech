@@ -1,32 +1,4 @@
 {
-  "a503aa8ef4ee": {
-    "title": "Claude Fable 5.1 and Claude Mythos 5.1",
-    "date": "2026-09-02"
-  },
-  "b2f0a9b31e14": {
-    "title": "AfterQuery reportedly becomes Y Combinator\u2019s fastest-ever unicorn",
-    "date": "2026-09-02"
-  },
-  "ab3319a45adf": {
-    "title": "OpenAI faces 30 more lawsuits tied to Tumbler Ridge shooting",
-    "date": "2026-09-02"
-  },
-  "3a1f8cb479ec": {
-    "title": "Microsoft Outlook outage reported by thousands of users on Monday",
-    "date": "2026-09-02"
-  },
-  "7c66226fc50e": {
-    "title": "Uber is laying off 10 percent of staff",
-    "date": "2026-09-02"
-  },
-  "a556b7c05221": {
-    "title": "Tesla robotaxi service begins operations",
-    "date": "2026-09-02"
-  },
-  "3ab22072d801": {
-    "title": "BGP hijack infecting networks caused by a comedy of errors",
-    "date": "2026-09-02"
-  },
   "1990b3b8df4d": {
     "title": "OpenAI's Astra Reasoning Model",
     "date": "2026-09-03"
@@ -1186,5 +1158,29 @@
   "9f3790b18d0a": {
     "title": "Meta Commercial Terms of Service Update",
     "date": "2026-10-17"
+  },
+  "c3de6cdeea4a": {
+    "title": "Apple foldable iPhone rollout",
+    "date": "2026-10-18"
+  },
+  "829f5a0dd1b4": {
+    "title": "Meta AI data scraping terms",
+    "date": "2026-10-18"
+  },
+  "7932d5b4babf": {
+    "title": "US legislation on digital ownership",
+    "date": "2026-10-18"
+  },
+  "5d0ce350c6f6": {
+    "title": "OpenAI model security breach",
+    "date": "2026-10-18"
+  },
+  "9ccdc6d7c1e9": {
+    "title": "SpaceX wireless carrier plans",
+    "date": "2026-10-18"
+  },
+  "15721993d3e5": {
+    "title": "Porsche and Mercedes EV performance",
+    "date": "2026-10-18"
   }
 }
