@@ -1,60 +1,4 @@
 {
-  "1990b3b8df4d": {
-    "title": "OpenAI's Astra Reasoning Model",
-    "date": "2026-09-03"
-  },
-  "24ee9da748f6": {
-    "title": "Palo Alto Networks Acquisition",
-    "date": "2026-09-03"
-  },
-  "2c26a2dacd0b": {
-    "title": "MapQuest App Store Surge",
-    "date": "2026-09-03"
-  },
-  "0a2324534283": {
-    "title": "FCC Robocall Scorecard",
-    "date": "2026-09-03"
-  },
-  "31e3ffe55103": {
-    "title": "NASA Lunar Spacesuit Redesign",
-    "date": "2026-09-03"
-  },
-  "06c675c89422": {
-    "title": "DJI Robot Vacuum Data Privacy",
-    "date": "2026-09-03"
-  },
-  "b9aadcdb7fa1": {
-    "title": "Awol Vision 4K Projector Launch",
-    "date": "2026-09-03"
-  },
-  "c58451178b43": {
-    "title": "Tesla Cybercab Fleet Purchasing",
-    "date": "2026-09-04"
-  },
-  "d0fc24d278e5": {
-    "title": "Oura IPO Filing",
-    "date": "2026-09-04"
-  },
-  "a828a66426a1": {
-    "title": "Anker MindBase Smart Hub",
-    "date": "2026-09-04"
-  },
-  "ab6501ccf16c": {
-    "title": "UGREEN HomeAgent Platform",
-    "date": "2026-09-04"
-  },
-  "50f712846547": {
-    "title": "Instagram AI Detection Issues",
-    "date": "2026-09-04"
-  },
-  "1f8c9aa25aca": {
-    "title": "1Password Linux Funding Controversy",
-    "date": "2026-09-04"
-  },
-  "4c699c56bd3c": {
-    "title": "Japan Phobos Mars Probe",
-    "date": "2026-09-04"
-  },
   "ec6e74b597fe": {
     "title": "OpenAI agent incident and regulatory fallout",
     "date": "2026-09-05"
@@ -1182,5 +1126,37 @@
   "15721993d3e5": {
     "title": "Porsche and Mercedes EV performance",
     "date": "2026-10-18"
+  },
+  "a3c8fc3f8c42": {
+    "title": "US orders federal agencies to remove China\u2019s DeepSeek AI",
+    "date": "2026-10-20"
+  },
+  "64516470ff42": {
+    "title": "Spotify launches paid podcast memberships",
+    "date": "2026-10-20"
+  },
+  "8f41a0ad98e1": {
+    "title": "TikTok employees reported child safety risks",
+    "date": "2026-10-20"
+  },
+  "349a23df318a": {
+    "title": "Adobe Lightroom adds generative eye correction",
+    "date": "2026-10-20"
+  },
+  "ad5a634b626f": {
+    "title": "Spotify removes fifty million AI-generated tracks",
+    "date": "2026-10-20"
+  },
+  "8f927f5ae5ea": {
+    "title": "Reliable Robotics raises one hundred fifteen million dollars",
+    "date": "2026-10-20"
+  },
+  "1b192c88938a": {
+    "title": "Japan launches mission to Phobos",
+    "date": "2026-10-20"
+  },
+  "505acd82f0c1": {
+    "title": "Russian spacecraft maneuvers near Ukrainian satellite",
+    "date": "2026-10-20"
   }
 }
