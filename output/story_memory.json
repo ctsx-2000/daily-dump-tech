@@ -1,36 +1,4 @@
 {
-  "ec6e74b597fe": {
-    "title": "OpenAI agent incident and regulatory fallout",
-    "date": "2026-09-05"
-  },
-  "acdd0d1a66b5": {
-    "title": "Tesla active collision avoidance update",
-    "date": "2026-09-05"
-  },
-  "d06ebd9f6e94": {
-    "title": "European BepiColombo mission approach",
-    "date": "2026-09-05"
-  },
-  "4c054979080d": {
-    "title": "Nscale pre IPO financing",
-    "date": "2026-09-05"
-  },
-  "9f81ce086fa3": {
-    "title": "Audacity four software overhaul",
-    "date": "2026-09-05"
-  },
-  "a46b55c5da82": {
-    "title": "CD revenue growth report",
-    "date": "2026-09-05"
-  },
-  "0a51b085c41c": {
-    "title": "Bungie headquarters sublease",
-    "date": "2026-09-05"
-  },
-  "7fd21696411c": {
-    "title": "ASCII smuggling spam trend",
-    "date": "2026-09-05"
-  },
   "37b9bb93c0cd": {
     "title": "OpenAI and Microsoft Sued by News Outlets",
     "date": "2026-09-06"
@@ -1158,5 +1126,29 @@
   "505acd82f0c1": {
     "title": "Russian spacecraft maneuvers near Ukrainian satellite",
     "date": "2026-10-20"
+  },
+  "cbf2eda26633": {
+    "title": "PHP Critical Vulnerabilities",
+    "date": "2026-10-21"
+  },
+  "5e1447b14adf": {
+    "title": "Anthropic IPO and Compute Constraints",
+    "date": "2026-10-21"
+  },
+  "a5f01761de31": {
+    "title": "Nvidia GPU Driver Update",
+    "date": "2026-10-21"
+  },
+  "36b694204586": {
+    "title": "Google Gemini Personal Intelligence in Cars",
+    "date": "2026-10-21"
+  },
+  "9ecb61701d1b": {
+    "title": "Mach9 Funding Round",
+    "date": "2026-10-21"
+  },
+  "0b03aae3cff7": {
+    "title": "Spotify Native Car App",
+    "date": "2026-10-21"
   }
 }
