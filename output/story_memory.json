@@ -1,36 +1,4 @@
 {
-  "37b9bb93c0cd": {
-    "title": "OpenAI and Microsoft Sued by News Outlets",
-    "date": "2026-09-06"
-  },
-  "4a53e9e138c3": {
-    "title": "OpenAI Internal Agent Incidents",
-    "date": "2026-09-06"
-  },
-  "8a9ce217112a": {
-    "title": "Acer Launches Blackwell-Based Workstation",
-    "date": "2026-09-06"
-  },
-  "6fa92d464fdd": {
-    "title": "Apple iPhone Roadmap Leaks",
-    "date": "2026-09-06"
-  },
-  "66223a4536bc": {
-    "title": "Tesla Cybercab Safety Investigation",
-    "date": "2026-09-06"
-  },
-  "6bc9e984b917": {
-    "title": "Microsoft Implements Windows Age Verification",
-    "date": "2026-09-06"
-  },
-  "71a43d5a1bfe": {
-    "title": "Gamescom Security Update",
-    "date": "2026-09-06"
-  },
-  "5cb0ae707ddc": {
-    "title": "Cyborg Cockroach Research",
-    "date": "2026-09-06"
-  },
   "61d898140c27": {
     "title": "Isar Aerospace successfully launches first commercial orbital rocket",
     "date": "2026-09-07"
@@ -1150,5 +1118,33 @@
   "0b03aae3cff7": {
     "title": "Spotify Native Car App",
     "date": "2026-10-21"
+  },
+  "fd991175a164": {
+    "title": "DeepSeek raises 15 billion dollars",
+    "date": "2026-10-22"
+  },
+  "8068c7c0e005": {
+    "title": "1Password introduces AI agent authentication",
+    "date": "2026-10-22"
+  },
+  "0c5f100d090c": {
+    "title": "Google brings personal intelligence to Gemini in cars",
+    "date": "2026-10-22"
+  },
+  "949d6f5c4224": {
+    "title": "Xbox reportedly planning three waves of layoffs",
+    "date": "2026-10-22"
+  },
+  "ecd098b4cc15": {
+    "title": "Nirva raises 33 million dollars for ambient AI pendant",
+    "date": "2026-10-22"
+  },
+  "351a5ea77edf": {
+    "title": "Three hundred thirty-three Tor exit nodes hijacked",
+    "date": "2026-10-22"
+  },
+  "e0b58945d05e": {
+    "title": "Airbnb removes chore requirements for guests",
+    "date": "2026-10-22"
   }
 }
