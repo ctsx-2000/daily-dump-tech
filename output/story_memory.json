@@ -1,28 +1,4 @@
 {
-  "61d898140c27": {
-    "title": "Isar Aerospace successfully launches first commercial orbital rocket",
-    "date": "2026-09-07"
-  },
-  "f655be02bfb5": {
-    "title": "Acer unveils RTX Spark AI workstation",
-    "date": "2026-09-07"
-  },
-  "7c4bf2c5dbcf": {
-    "title": "LG smart TVs logging audio with screen off",
-    "date": "2026-09-07"
-  },
-  "7adc3edd24bd": {
-    "title": "Global timekeepers consider swapping leap second for leap hour",
-    "date": "2026-09-07"
-  },
-  "916ac226edae": {
-    "title": "Amazon cargo plane crash at Miami International Airport",
-    "date": "2026-09-07"
-  },
-  "2a440f629013": {
-    "title": "Study finds smartwatch calorie tracking inaccurate",
-    "date": "2026-09-07"
-  },
   "328c2ba87d2b": {
     "title": "Huawei Mate XT 2 Trifold Smartphone",
     "date": "2026-09-08"
@@ -1146,5 +1122,33 @@
   "e0b58945d05e": {
     "title": "Airbnb removes chore requirements for guests",
     "date": "2026-10-22"
+  },
+  "50d69fb2f406": {
+    "title": "OpenAI valuation raise",
+    "date": "2026-10-23"
+  },
+  "6c9a59ea60f5": {
+    "title": "Hugging Face biology model",
+    "date": "2026-10-23"
+  },
+  "607cb8533555": {
+    "title": "Rivian self-driving acquisition",
+    "date": "2026-10-23"
+  },
+  "9300b3c16a9e": {
+    "title": "Linux kernel vulnerabilities",
+    "date": "2026-10-23"
+  },
+  "d70ed5301e87": {
+    "title": "Nintendo Switch 2 hacking",
+    "date": "2026-10-23"
+  },
+  "6632a6a2414d": {
+    "title": "Spotify family plan enforcement",
+    "date": "2026-10-23"
+  },
+  "eecc40ef5c37": {
+    "title": "Etsy AI policy change",
+    "date": "2026-10-23"
   }
 }
