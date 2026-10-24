@@ -1,28 +1,4 @@
 {
-  "328c2ba87d2b": {
-    "title": "Huawei Mate XT 2 Trifold Smartphone",
-    "date": "2026-09-08"
-  },
-  "989f240be2f1": {
-    "title": "Apple Foldable iPhone Launch",
-    "date": "2026-09-08"
-  },
-  "2285f25d3f96": {
-    "title": "NavigateAI Startup Launch",
-    "date": "2026-09-08"
-  },
-  "3443d361d5bc": {
-    "title": "220 Million Records Exposed in APIS Leak",
-    "date": "2026-09-08"
-  },
-  "af333a8fd5be": {
-    "title": "LG Smart TV Data Collection",
-    "date": "2026-09-08"
-  },
-  "46dcdb375eca": {
-    "title": "ASML New Photomask Technology",
-    "date": "2026-09-08"
-  },
   "737ad03a4ff8": {
     "title": "OpenAI solves Navier-Stokes problem",
     "date": "2026-09-09"
@@ -1150,5 +1126,33 @@
   "eecc40ef5c37": {
     "title": "Etsy AI policy change",
     "date": "2026-10-23"
+  },
+  "cfa1b6698672": {
+    "title": "OpenAI shifts to offline AI training",
+    "date": "2026-10-24"
+  },
+  "8f2ef0b872ea": {
+    "title": "Daytona reaches one billion dollar valuation",
+    "date": "2026-10-24"
+  },
+  "67454caa0efe": {
+    "title": "Google Messages rolls out enhanced protection",
+    "date": "2026-10-24"
+  },
+  "5c595dbc02c6": {
+    "title": "YouTube removes subscriptions tab from mobile app",
+    "date": "2026-10-24"
+  },
+  "82f49bc0f89c": {
+    "title": "Xbox COO departs after short tenure",
+    "date": "2026-10-24"
+  },
+  "b40a2fb284bf": {
+    "title": "Capcom and Square Enix report security breaches",
+    "date": "2026-10-24"
+  },
+  "3ceabe53e26f": {
+    "title": "Canva releases first proprietary image model",
+    "date": "2026-10-24"
   }
 }
