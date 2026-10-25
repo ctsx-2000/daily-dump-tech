@@ -1,32 +1,4 @@
 {
-  "737ad03a4ff8": {
-    "title": "OpenAI solves Navier-Stokes problem",
-    "date": "2026-09-09"
-  },
-  "8319b4922b84": {
-    "title": "Suno pivots to licensed training data",
-    "date": "2026-09-09"
-  },
-  "ef670ba5c5ee": {
-    "title": "Anthropic warns of token theft",
-    "date": "2026-09-09"
-  },
-  "9e1a5e46a017": {
-    "title": "F5 BIG-IP vulnerability discovery",
-    "date": "2026-09-09"
-  },
-  "36b2010f09d4": {
-    "title": "The Exploration Company closes 450 million dollar round",
-    "date": "2026-09-09"
-  },
-  "696ea3c05dc3": {
-    "title": "CloudNC raises 20 million for manufacturing automation",
-    "date": "2026-09-09"
-  },
-  "ab53b8696d80": {
-    "title": "LG TVs scanning for third-party devices",
-    "date": "2026-09-09"
-  },
   "aa8507f939c4": {
     "title": "Automattic's board forces CEO Matt Mullenweg into leave of absence",
     "date": "2026-09-10"
@@ -1154,5 +1126,29 @@
   "3ceabe53e26f": {
     "title": "Canva releases first proprietary image model",
     "date": "2026-10-24"
+  },
+  "f83236c0fa0f": {
+    "title": "Block\u2019s new local-running voice model",
+    "date": "2026-10-25"
+  },
+  "f02c12dc08b0": {
+    "title": "Pennsylvania law requires AI-generated ad disclosure",
+    "date": "2026-10-25"
+  },
+  "9a7f672dc5fa": {
+    "title": "PHP critical security vulnerabilities patched",
+    "date": "2026-10-25"
+  },
+  "46ea88ca90b4": {
+    "title": "Instacart acquisition talks with DoorDash and Uber",
+    "date": "2026-10-25"
+  },
+  "d0b92aa0792f": {
+    "title": "New Mars cloud findings suggest novel ice physics",
+    "date": "2026-10-25"
+  },
+  "839188c007cd": {
+    "title": "Starlink service restored in Ukraine",
+    "date": "2026-10-25"
   }
 }
