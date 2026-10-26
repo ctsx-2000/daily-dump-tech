@@ -1,20 +1,4 @@
 {
-  "aa8507f939c4": {
-    "title": "Automattic's board forces CEO Matt Mullenweg into leave of absence",
-    "date": "2026-09-10"
-  },
-  "ca668935e6df": {
-    "title": "Xbox picks up Kojima&#8217;s Physint after PlayStation dropped it",
-    "date": "2026-09-10"
-  },
-  "5b12fe60f349": {
-    "title": "Microsoft says September updates fix mouse settings reset issues",
-    "date": "2026-09-10"
-  },
-  "53f181c556e2": {
-    "title": "The new Apple Watch will use microphone and other sensors to generate AI recaps of your day - 9to5Mac",
-    "date": "2026-09-10"
-  },
   "4b86fe9f3445": {
     "title": "OpenAI pauses Pro subscriptions due to capacity constraints",
     "date": "2026-09-11"
@@ -1150,5 +1134,29 @@
   "839188c007cd": {
     "title": "Starlink service restored in Ukraine",
     "date": "2026-10-25"
+  },
+  "09ce8379d578": {
+    "title": "Anthropic IPO Filing",
+    "date": "2026-10-26"
+  },
+  "15e1eba8907c": {
+    "title": "Google AI Search Impact",
+    "date": "2026-10-26"
+  },
+  "64eaffe0863a": {
+    "title": "Windows 11 Performance Extensions",
+    "date": "2026-10-26"
+  },
+  "f5c0c79107da": {
+    "title": "NVIDIA GPU Performance Mod",
+    "date": "2026-10-26"
+  },
+  "8cd64c6ded89": {
+    "title": "Reddit Open Source AI Ban",
+    "date": "2026-10-26"
+  },
+  "0b43b27d7861": {
+    "title": "US Government FISA Surveillance",
+    "date": "2026-10-26"
   }
 }
