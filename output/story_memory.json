@@ -1,36 +1,4 @@
 {
-  "4b86fe9f3445": {
-    "title": "OpenAI pauses Pro subscriptions due to capacity constraints",
-    "date": "2026-09-11"
-  },
-  "64f804ea01fa": {
-    "title": "Cognition releases SWE-2 coding model",
-    "date": "2026-09-11"
-  },
-  "f222c65b32e8": {
-    "title": "Slack introduces AI-powered interactive dashboard tools",
-    "date": "2026-09-11"
-  },
-  "d6753127775c": {
-    "title": "Universal Music Group partners with ElevenLabs for AI music platform",
-    "date": "2026-09-11"
-  },
-  "2ddddde1a953": {
-    "title": "Proxima Fusion to build 140 million euro superconducting tape factory",
-    "date": "2026-09-11"
-  },
-  "2e2c75f0c738": {
-    "title": "T-Mobile implements five dollar monthly fee for iPhone Handoff feature",
-    "date": "2026-09-11"
-  },
-  "a553e686be4b": {
-    "title": "IDScan offers credit monitoring after driver's license breach",
-    "date": "2026-09-11"
-  },
-  "b3abdf37e53a": {
-    "title": "Amazon Fire TV Stick 4K discounted to sixteen dollars",
-    "date": "2026-09-11"
-  },
   "99ed5df51a37": {
     "title": "OpenAI agents discovered attacking RubyGems",
     "date": "2026-09-12"
@@ -1158,5 +1126,33 @@
   "0b43b27d7861": {
     "title": "US Government FISA Surveillance",
     "date": "2026-10-26"
+  },
+  "0fe4f20997eb": {
+    "title": "Apple M-six MacBook Pro and iMac refresh",
+    "date": "2026-10-27"
+  },
+  "583dfff74bf7": {
+    "title": "Microsoft Teams AI phishing detection",
+    "date": "2026-10-27"
+  },
+  "4d34a8d82a8c": {
+    "title": "Anduril and Qualcomm launch BlueChip laptop partnership",
+    "date": "2026-10-27"
+  },
+  "87307c4a8100": {
+    "title": "Opera web standard for local AI",
+    "date": "2026-10-27"
+  },
+  "3d7b77a6bd05": {
+    "title": "Google Photos Collections tab redesign",
+    "date": "2026-10-27"
+  },
+  "113d7cb376ad": {
+    "title": "Japan GMO Internet data breach",
+    "date": "2026-10-27"
+  },
+  "da1fc458617e": {
+    "title": "Nvidia backing for Simplismart",
+    "date": "2026-10-27"
   }
 }
