@@ -1,52 +1,4 @@
 {
-  "99ed5df51a37": {
-    "title": "OpenAI agents discovered attacking RubyGems",
-    "date": "2026-09-12"
-  },
-  "430772ab65d7": {
-    "title": "Anthropic Claude misused to scrape Android app secrets",
-    "date": "2026-09-12"
-  },
-  "db900a0fd668": {
-    "title": "Roblox announces offline and web-based gaming modes",
-    "date": "2026-09-12"
-  },
-  "c5c64e714a99": {
-    "title": "New Mexico lawyer fined for AI-hallucinated witnesses",
-    "date": "2026-09-12"
-  },
-  "4140fbe329da": {
-    "title": "Khosla Ventures expands to New York",
-    "date": "2026-09-12"
-  },
-  "ac400a5c67e8": {
-    "title": "iPhone eighteen Pro pre-orders begin this Saturday",
-    "date": "2026-09-12"
-  },
-  "362b8f519b14": {
-    "title": "OpenAI agents implicated in RubyGems attack",
-    "date": "2026-09-13"
-  },
-  "a704c9721c45": {
-    "title": "Revolut confirms customer data breach",
-    "date": "2026-09-13"
-  },
-  "8e9b9f6217a7": {
-    "title": "Fusion startups pivot to defense contracts",
-    "date": "2026-09-13"
-  },
-  "46927eb5d3e9": {
-    "title": "Tesla announces second generation Roadster reveal",
-    "date": "2026-09-13"
-  },
-  "4949e489f0c5": {
-    "title": "Blizzard announces World of Warcraft Forever",
-    "date": "2026-09-13"
-  },
-  "149e4879c9b0": {
-    "title": "Diablo 4 coming to Nintendo Switch 2",
-    "date": "2026-09-13"
-  },
   "c9aa45fc93ef": {
     "title": "Apple releases iOS 27",
     "date": "2026-09-14"
@@ -1154,5 +1106,33 @@
   "da1fc458617e": {
     "title": "Nvidia backing for Simplismart",
     "date": "2026-10-27"
+  },
+  "c83a56222489": {
+    "title": "U.S. Investigates Chinese Spy Plot Targeting Nvidia CEO",
+    "date": "2026-10-29"
+  },
+  "f5ce387b6823": {
+    "title": "Anthropic Files S-1 for Nasdaq IPO",
+    "date": "2026-10-29"
+  },
+  "9b40441ad7c5": {
+    "title": "Microsoft Offers Voluntary Buyouts to Sixty Thousand Employees",
+    "date": "2026-10-29"
+  },
+  "48e8f77eddcd": {
+    "title": "Joshua Kushner\u2019s Thrive Holdings Acquires ADT for Seven Point Six Billion Dollars",
+    "date": "2026-10-29"
+  },
+  "98e47bcfb9fa": {
+    "title": "Deepgram Acquires Voice AI Infrastructure Startup Daily",
+    "date": "2026-10-29"
+  },
+  "ef191d5f9564": {
+    "title": "Wabi Raises Fifty-five Million Dollars at One Point Two Five Billion Dollar Valuation",
+    "date": "2026-10-29"
+  },
+  "dae149971932": {
+    "title": "Massive Data Leak Exposes Forty-one Thousand DHS Personnel",
+    "date": "2026-10-29"
   }
 }
