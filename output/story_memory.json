@@ -1,32 +1,4 @@
 {
-  "c9aa45fc93ef": {
-    "title": "Apple releases iOS 27",
-    "date": "2026-09-14"
-  },
-  "6154669219b6": {
-    "title": "Superhuman acquires Fathom",
-    "date": "2026-09-14"
-  },
-  "4222a9bd606f": {
-    "title": "Waymo robotaxi incident in San Francisco",
-    "date": "2026-09-14"
-  },
-  "6e552985b55a": {
-    "title": "AI leaders call for industry slowdown",
-    "date": "2026-09-14"
-  },
-  "b31a5959e994": {
-    "title": "Sexually explicit deepfake sites target politicians",
-    "date": "2026-09-14"
-  },
-  "702e691e2abe": {
-    "title": "Singular Photonics debuts SPAD image sensor",
-    "date": "2026-09-14"
-  },
-  "0fd61733ddce": {
-    "title": "Music industry adopts new anti-fraud measures",
-    "date": "2026-09-14"
-  },
   "8ceaa2812fb5": {
     "title": "OpenAI Acquires Glass Imaging",
     "date": "2026-09-15"
@@ -1134,5 +1106,25 @@
   "dae149971932": {
     "title": "Massive Data Leak Exposes Forty-one Thousand DHS Personnel",
     "date": "2026-10-29"
+  },
+  "a58f297ead68": {
+    "title": "Binance crypto heist",
+    "date": "2026-10-30"
+  },
+  "7fe4ca416c63": {
+    "title": "AI data center manufacturing",
+    "date": "2026-10-30"
+  },
+  "3f458b69f7d7": {
+    "title": "General Motors data privacy ruling",
+    "date": "2026-10-30"
+  },
+  "12b7b278764b": {
+    "title": "Reddit search traffic shift",
+    "date": "2026-10-30"
+  },
+  "7fe5d58ce8cd": {
+    "title": "Windows eleven update",
+    "date": "2026-10-30"
   }
 }
