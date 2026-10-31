@@ -1,32 +1,4 @@
 {
-  "8ceaa2812fb5": {
-    "title": "OpenAI Acquires Glass Imaging",
-    "date": "2026-09-15"
-  },
-  "aa32a0cacf1b": {
-    "title": "Apple Integrates Third Party AI",
-    "date": "2026-09-15"
-  },
-  "f6a2f288b22d": {
-    "title": "Nvidia CEO Comments on AI Development Pace",
-    "date": "2026-09-15"
-  },
-  "b4378ca309f0": {
-    "title": "Cornelis Raises Funding for Network Infrastructure",
-    "date": "2026-09-15"
-  },
-  "048d89bfb13a": {
-    "title": "Exein Secures Funding for Physical AI",
-    "date": "2026-09-15"
-  },
-  "38821e3b381f": {
-    "title": "US Military Deploys On Orbit Weapons",
-    "date": "2026-09-15"
-  },
-  "d683d7584eb2": {
-    "title": "Mozilla Report on Open AI Model Capability",
-    "date": "2026-09-15"
-  },
   "df8009b5c532": {
     "title": "Gemini 3.8 Live and Extended Thinking",
     "date": "2026-09-16"
@@ -1126,5 +1098,29 @@
   "7fe5d58ce8cd": {
     "title": "Windows eleven update",
     "date": "2026-10-30"
+  },
+  "1b537047f8cb": {
+    "title": "Malicious Claude Code extension on Cursor planted SSH backdoors",
+    "date": "2026-10-31"
+  },
+  "c03875910574": {
+    "title": "Apple Intelligence is finally coming to China with iOS 27.3",
+    "date": "2026-10-31"
+  },
+  "9effd6d2321f": {
+    "title": "NVIDIA\u2019s RTX 5080 24 GB launch timeframe",
+    "date": "2026-10-31"
+  },
+  "cb6126b8f35c": {
+    "title": "Salesforce acquires defense tech startup Rune",
+    "date": "2026-10-31"
+  },
+  "c8c9e32d0a0e": {
+    "title": "Intel stock drop following PC market decline",
+    "date": "2026-10-31"
+  },
+  "e51212b9f5b6": {
+    "title": "The 12th Google Store opening in Houston",
+    "date": "2026-10-31"
   }
 }
