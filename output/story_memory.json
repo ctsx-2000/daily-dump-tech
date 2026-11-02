@@ -1,36 +1,4 @@
 {
-  "cee8f9b24a3d": {
-    "title": "Google Gemini 3.8 expansion",
-    "date": "2026-09-17"
-  },
-  "874a0770d30c": {
-    "title": "NVIDIA RTX 5090 shortage",
-    "date": "2026-09-17"
-  },
-  "82dcd199bb09": {
-    "title": "Googlebook event",
-    "date": "2026-09-17"
-  },
-  "f99c807fddcb": {
-    "title": "Snap smart glasses update",
-    "date": "2026-09-17"
-  },
-  "7405b4655ea9": {
-    "title": "WhatsApp account expansion",
-    "date": "2026-09-17"
-  },
-  "245d756b4c6b": {
-    "title": "Comp AI funding",
-    "date": "2026-09-17"
-  },
-  "d6cf35fa6665": {
-    "title": "California net neutrality policy",
-    "date": "2026-09-17"
-  },
-  "5c92b1f81eb4": {
-    "title": "Meteor tracking group cyberattack",
-    "date": "2026-09-17"
-  },
   "24d5c3f83a36": {
     "title": "Microsoft AI Scraping Lawsuit",
     "date": "2026-09-18"
@@ -1126,5 +1094,29 @@
   "9b43e59dc922": {
     "title": "Dartmouth provost loses job over AI use",
     "date": "2026-11-01"
+  },
+  "4c02cd83b6af": {
+    "title": "Marvell acquires Lumentum",
+    "date": "2026-11-02"
+  },
+  "aa77e5a1c028": {
+    "title": "Squarespace layoffs",
+    "date": "2026-11-02"
+  },
+  "e513f8d803fb": {
+    "title": "The New York Times sues Brave",
+    "date": "2026-11-02"
+  },
+  "8f792d99c1ba": {
+    "title": "Microsoft AI CEO on conscious machines",
+    "date": "2026-11-02"
+  },
+  "6df0be47246a": {
+    "title": "42AI emerges from stealth",
+    "date": "2026-11-02"
+  },
+  "262781bb0cd5": {
+    "title": "Asus releases Wi-Fi eight router",
+    "date": "2026-11-02"
   }
 }
