@@ -1,36 +1,4 @@
 {
-  "24d5c3f83a36": {
-    "title": "Microsoft AI Scraping Lawsuit",
-    "date": "2026-09-18"
-  },
-  "56671fbc798a": {
-    "title": "OpenAI Model Misalignment",
-    "date": "2026-09-18"
-  },
-  "cf9a5559fd50": {
-    "title": "Google AI Agent for Groups",
-    "date": "2026-09-18"
-  },
-  "5084efff7ef7": {
-    "title": "AMD 192GB Laptop",
-    "date": "2026-09-18"
-  },
-  "5084b5ea3803": {
-    "title": "FAA AI Air Traffic Control",
-    "date": "2026-09-18"
-  },
-  "75648ec67b82": {
-    "title": "Waymo Police Reporting",
-    "date": "2026-09-18"
-  },
-  "cc44087a6676": {
-    "title": "Geothermal Energy Funding",
-    "date": "2026-09-18"
-  },
-  "81586410f759": {
-    "title": "New Android Malware RatHat",
-    "date": "2026-09-18"
-  },
   "748b666907f4": {
     "title": "The FCC waives foreign ownership rules for Paramount",
     "date": "2026-09-19"
@@ -1118,5 +1086,29 @@
   "262781bb0cd5": {
     "title": "Asus releases Wi-Fi eight router",
     "date": "2026-11-02"
+  },
+  "d1b6a23ad547": {
+    "title": "CrowdStrike acquires AI security startups",
+    "date": "2026-11-03"
+  },
+  "85c961b8dae5": {
+    "title": "Apple restricts dating and AI companion apps",
+    "date": "2026-11-03"
+  },
+  "1f43a9f7ddc5": {
+    "title": "Google dismantles Android TV botnet",
+    "date": "2026-11-03"
+  },
+  "cadbef96b7bc": {
+    "title": "Grand Theft Auto Six hardware requirements",
+    "date": "2026-11-03"
+  },
+  "87042be438b3": {
+    "title": "Xbox Nano controller details",
+    "date": "2026-11-03"
+  },
+  "e01c26f8bb5c": {
+    "title": "Intel Larrabee GPU prototype discovery",
+    "date": "2026-11-03"
   }
 }
