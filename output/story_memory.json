@@ -1,60 +1,4 @@
 {
-  "eadb8c485268": {
-    "title": "Samsung to double high bandwidth memory output",
-    "date": "2026-09-21"
-  },
-  "e9ca11146905": {
-    "title": "OpenAI and Codex sandbox vulnerabilities",
-    "date": "2026-09-21"
-  },
-  "b80eeac45d1f": {
-    "title": "Google launches agentic orchestrator tool",
-    "date": "2026-09-21"
-  },
-  "dc6e5ae065f1": {
-    "title": "FBI updates CJIS security policy",
-    "date": "2026-09-21"
-  },
-  "55394dd5e88b": {
-    "title": "Malicious npm packages bypass install script defenses",
-    "date": "2026-09-21"
-  },
-  "9fb1aac60c75": {
-    "title": "Vivo releases X500 Pro Max with advanced camera hardware",
-    "date": "2026-09-21"
-  },
-  "60e0a46c92db": {
-    "title": "Apple releases high-end M5 Ultra Mac Studio",
-    "date": "2026-09-21"
-  },
-  "c261b8078886": {
-    "title": "The Boring Company proposes Texas Hyperloop",
-    "date": "2026-09-21"
-  },
-  "cd752ed83128": {
-    "title": "Adobe Premiere for Android",
-    "date": "2026-09-22"
-  },
-  "ba831482c000": {
-    "title": "Oppo Find X10 Pro Max",
-    "date": "2026-09-22"
-  },
-  "cf045878d8f7": {
-    "title": "Nexstrom 2D Semiconductors",
-    "date": "2026-09-22"
-  },
-  "d6334151f3e4": {
-    "title": "Meta Muse Security Vulnerability",
-    "date": "2026-09-22"
-  },
-  "6e9c3cc11021": {
-    "title": "FAA Flight Disruptions",
-    "date": "2026-09-22"
-  },
-  "eb5675f63535": {
-    "title": "Dave Plummer Task Manager Port",
-    "date": "2026-09-22"
-  },
   "4ca461d9a981": {
     "title": "OpenAI hires Patreon leadership team",
     "date": "2026-09-23"
@@ -1118,5 +1062,33 @@
   "0af5e183621c": {
     "title": "Bluesky usage spike",
     "date": "2026-11-05"
+  },
+  "722892cf45c0": {
+    "title": "Apple's First Touchscreen Mac",
+    "date": "2026-11-07"
+  },
+  "9d864b187678": {
+    "title": "Vulnerability in Linux Devices",
+    "date": "2026-11-07"
+  },
+  "4fa158f8f6d1": {
+    "title": "Sequoia Capital Shuts Down Scouts Program",
+    "date": "2026-11-07"
+  },
+  "bc67fad2ed28": {
+    "title": "China Recruits Executive to Spy on Nvidia",
+    "date": "2026-11-07"
+  },
+  "bc8e11f4e32b": {
+    "title": "Massive Theft of Nvidia Hardware",
+    "date": "2026-11-07"
+  },
+  "257a32509db6": {
+    "title": "Fridge-Hacking and Critical Infrastructure",
+    "date": "2026-11-07"
+  },
+  "472d3ffc7010": {
+    "title": "AI Data Center Power Grid Conflicts",
+    "date": "2026-11-07"
   }
 }

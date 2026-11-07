@@ -1109,6 +1109,15 @@
     <itunes:duration>256</itunes:duration>
     <guid isPermaLink="false">https://ctsx-2000.github.io/daily-dump-tech//episodes/daily-dump-tech-2026-11-05.mp3</guid>
   </item>
+
+  <item>
+    <title>Daily Dump: Tech — 2026-11-07</title>
+    <description>Five tech stories for 2026-11-07.</description>
+    <pubDate>Sat, 07 Nov 2026 15:00:51 +0000</pubDate>
+    <enclosure url="https://ctsx-2000.github.io/daily-dump-tech//episodes/daily-dump-tech-2026-11-07.mp3" length="1464336" type="audio/mpeg"/>
+    <itunes:duration>244</itunes:duration>
+    <guid isPermaLink="false">https://ctsx-2000.github.io/daily-dump-tech//episodes/daily-dump-tech-2026-11-07.mp3</guid>
+  </item>
   <!-- EPISODES -->
   </channel>
 </rss>
