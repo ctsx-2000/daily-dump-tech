@@ -1,56 +1,4 @@
 {
-  "21ae58fa3380": {
-    "title": "Microsoft Copilot Super App",
-    "date": "2026-09-25"
-  },
-  "7a900ad23594": {
-    "title": "Qualcomm Snapdragon Sound Elite Gen 2",
-    "date": "2026-09-25"
-  },
-  "f5f0e4042cf5": {
-    "title": "Waymo Fleet Expansion",
-    "date": "2026-09-25"
-  },
-  "25c947804c3b": {
-    "title": "Microsoft Surface Hardware Refresh",
-    "date": "2026-09-25"
-  },
-  "4f4a4950e905": {
-    "title": "Bitget Crypto Theft",
-    "date": "2026-09-25"
-  },
-  "6c3d6df8017c": {
-    "title": "F-Droid 2.0 Update",
-    "date": "2026-09-25"
-  },
-  "dc151cc64cf8": {
-    "title": "Toyota Electric Corolla",
-    "date": "2026-09-25"
-  },
-  "9f7b43405a62": {
-    "title": "OpenAI's agents targeted and infiltrated US government websites",
-    "date": "2026-09-26"
-  },
-  "1ecb656480e8": {
-    "title": "Tesla's Optimus production scaling challenges",
-    "date": "2026-09-26"
-  },
-  "1768173951dd": {
-    "title": "Meta launches million dollar developer competition for VR glasses",
-    "date": "2026-09-26"
-  },
-  "61c513cacd78": {
-    "title": "Motorola Signature 27 confirmed for GrapheneOS",
-    "date": "2026-09-26"
-  },
-  "0409d3cb1d9a": {
-    "title": "AI displacement of new graduates remains unobserved",
-    "date": "2026-09-26"
-  },
-  "ca87b98cb1bb": {
-    "title": "Paramount and Warner Brothers Discovery merger faces antitrust scrutiny",
-    "date": "2026-09-26"
-  },
   "9703f276f2c8": {
     "title": "Google ads scareware",
     "date": "2026-09-27"
@@ -1086,5 +1034,33 @@
   "e6ab4c5b1f0e": {
     "title": "Uber launches in-app parking reservations",
     "date": "2026-11-09"
+  },
+  "b907cac25a6f": {
+    "title": "OpenAI revenue growth",
+    "date": "2026-11-11"
+  },
+  "f9ef9ac41826": {
+    "title": "Google AlphaGenome 2",
+    "date": "2026-11-11"
+  },
+  "ca8ce9f98a14": {
+    "title": "Google formal verification",
+    "date": "2026-11-11"
+  },
+  "719f186b73c7": {
+    "title": "Apple iCloud outage",
+    "date": "2026-11-11"
+  },
+  "13d238ad708f": {
+    "title": "Microsoft Auto SR",
+    "date": "2026-11-11"
+  },
+  "283f8c257010": {
+    "title": "Bandai Namco studio closure",
+    "date": "2026-11-11"
+  },
+  "ebc8b86dca8b": {
+    "title": "PlayStation studio cancellation",
+    "date": "2026-11-11"
   }
 }
