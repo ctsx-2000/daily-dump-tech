@@ -1,32 +1,4 @@
 {
-  "017eaf9858c1": {
-    "title": "Meta launches enterprise AI platform",
-    "date": "2026-09-28"
-  },
-  "5cbea062c1e2": {
-    "title": "OpenAI misaligned reports",
-    "date": "2026-09-28"
-  },
-  "a0b364b897d9": {
-    "title": "Google shifts Gemini strategy",
-    "date": "2026-09-28"
-  },
-  "6d7258f6073e": {
-    "title": "SiMa.ai hits one point four five billion valuation",
-    "date": "2026-09-28"
-  },
-  "d719bd7f6d6c": {
-    "title": "DetectifAI startup launch",
-    "date": "2026-09-28"
-  },
-  "b635c6fc4b95": {
-    "title": "Walmart digital shelf pricing",
-    "date": "2026-09-28"
-  },
-  "1f635a3bdc40": {
-    "title": "Volkswagen electric vehicle strategy",
-    "date": "2026-09-28"
-  },
   "e1b6a64ab9f1": {
     "title": "Meta AI data privacy breach",
     "date": "2026-09-29"
@@ -1054,5 +1026,29 @@
   "b14521b8d5a4": {
     "title": "T-Mobile fined over low-income internet speed caps",
     "date": "2026-11-12"
+  },
+  "d184e8bcad1b": {
+    "title": "ChatGPT Wallet integration",
+    "date": "2026-11-13"
+  },
+  "d7c004157a4e": {
+    "title": "Microsoft global cloud outage",
+    "date": "2026-11-13"
+  },
+  "193855e3a948": {
+    "title": "Apple TV 4K launch and YouTube error",
+    "date": "2026-11-13"
+  },
+  "0a42368303d8": {
+    "title": "Windows zero day vulnerability",
+    "date": "2026-11-13"
+  },
+  "8a5abdc57db2": {
+    "title": "MachineGames Wolfenstein 3 development",
+    "date": "2026-11-13"
+  },
+  "67e72d83d599": {
+    "title": "ElevenLabs meeting note-taking app",
+    "date": "2026-11-13"
   }
 }
