@@ -1,32 +1,4 @@
 {
-  "e1b6a64ab9f1": {
-    "title": "Meta AI data privacy breach",
-    "date": "2026-09-29"
-  },
-  "13b3536e503b": {
-    "title": "Anthropic IPO risk disclosure",
-    "date": "2026-09-29"
-  },
-  "26eaee51e412": {
-    "title": "OpenAI state legal challenge",
-    "date": "2026-09-29"
-  },
-  "b3ac3e43d9f3": {
-    "title": "Reco AI security funding",
-    "date": "2026-09-29"
-  },
-  "19ee30a89b33": {
-    "title": "Firefox UI overhaul",
-    "date": "2026-09-29"
-  },
-  "280a8dbc540f": {
-    "title": "Fairphone earbuds release date",
-    "date": "2026-09-29"
-  },
-  "fcef994af91c": {
-    "title": "Nothing Headphone One Pro launch",
-    "date": "2026-09-29"
-  },
   "137193d2e389": {
     "title": "AMD acquires World Labs",
     "date": "2026-09-30"
@@ -1050,5 +1022,33 @@
   "67e72d83d599": {
     "title": "ElevenLabs meeting note-taking app",
     "date": "2026-11-13"
+  },
+  "2a6134c81a34": {
+    "title": "Apple Launches HomeView and new Apple TV 4K",
+    "date": "2026-11-14"
+  },
+  "f3f147330c92": {
+    "title": "Tesla Cybercab Personal Use Offer",
+    "date": "2026-11-14"
+  },
+  "7094a4d98d60": {
+    "title": "AMD Desktop CPU Market Share Drop",
+    "date": "2026-11-14"
+  },
+  "6df6830b32f9": {
+    "title": "LangChain Valuation",
+    "date": "2026-11-14"
+  },
+  "4bda94485b16": {
+    "title": "ChatGPT Wallet Agent Rollout",
+    "date": "2026-11-14"
+  },
+  "c61e6b0b5da5": {
+    "title": "Amazon World Product Graph",
+    "date": "2026-11-14"
+  },
+  "783a0c999590": {
+    "title": "FAA Nationwide Ground Stop",
+    "date": "2026-11-14"
   }
 }
